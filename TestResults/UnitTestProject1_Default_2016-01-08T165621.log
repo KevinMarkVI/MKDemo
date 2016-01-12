@@ -1,0 +1,340 @@
+﻿Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#3: GuineaPig - 
+#7: SpecFlowFeature1 - 
+#9: MK Individual Tests - 
+#4: Verify Title 1 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+1
+#5: Verify Title 2 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+2
+#6: Verify Title 3 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+3
+#8: End to End - TestAssembly:UnitTestProject1/Feature:SpecFlowFeature1/Scenario:End+to+End
+#10: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+#11: Confirm Alert is Present and Dismiss 2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+2
+#12: Confirm Alert is Present and Dismiss 3 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+3
+#13: Confirm Alert is Present and Dismiss 4 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+4
+#14: Confirm Alert is Present and Dismiss 5 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+5
+#15: Confirm Alert is Present and Dismiss 6 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+6
+End: Test Suite Dump
+Scheduler: considering #4 for thread #0
+Scheduler: using #4 for thread #0
+Test #4 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #4/0 is started on thread #0
+Scheduler: considering #5 for thread #1
+Scheduler: using #5 for thread #1
+Test #5 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #5/0 is started on thread #1
+Scheduler: considering #6 for thread #2
+Scheduler: using #6 for thread #2
+Test #6 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #6/0 is started on thread #2
+Scheduler: considering #8 for thread #3
+Scheduler: using #8 for thread #3
+Test #8 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #8/0 is started on thread #3
+Scheduler: considering #10 for thread #4
+Scheduler: using #10 for thread #4
+Test #10 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #10/0 is started on thread #4
+Scheduler: considering #11 for thread #5
+Scheduler: using #11 for thread #5
+Test #11 is scheduled for thread #5
+Thread #5: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #5
+Scheduler: considering #12 for thread #6
+Scheduler: using #12 for thread #6
+Test #12 is scheduled for thread #6
+Thread #6: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #6
+Scheduler: considering #13 for thread #7
+Scheduler: using #13 for thread #7
+Test #13 is scheduled for thread #7
+Thread #7: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #14 for thread #8
+Scheduler: using #14 for thread #8
+Test #14 is scheduled for thread #8
+Thread #8: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #8
+Test #13/0 is started on thread #7
+Scheduler: considering #15 for thread #9
+Scheduler: using #15 for thread #9
+Test #15 is scheduled for thread #9
+Thread #9: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #9
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Miles Kimball website
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I am on the Miles Kimball website")]
+T:        public void GivenIAmOnTheMilesKimballWebsite()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I dismiss the popup
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I dismiss the popup")]
+T:        public void GivenIDismissThePopup()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I search for Paua Shamrock Earrings using the SKU
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I search for Paua Shamrock Earrings using the SKU")]
+T:        public void GivenISearchForPauaShamrockEarringsUsingTheSKU()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click add to cart
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click add to cart")]
+T:        public void GivenIClickAddToCart()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click View Cart / Checkout
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click View Cart / Checkout")]
+T:        public void GivenIClickViewCartCheckout()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click Checkout
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click Checkout")]
+T:        public void GivenIClickCheckout()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click Checkout as Guest
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click Checkout as Guest")]
+T:        public void GivenIClickCheckoutAsGuest()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And Complete the various fields
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"Complete the various fields")]
+T:        public void GivenCompleteTheVariousFields()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click Proceed to Payment & Review
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click Proceed to Payment & Review")]
+T:        public void GivenIClickProceedToPaymentReview()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I enter payment information
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I enter payment information")]
+T:        public void GivenIEnterPaymentInformation()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:And I click Submit Order
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Given(@"I click Submit Order")]
+T:        public void GivenIClickSubmitOrder()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+B:Then the result should be 120 on the screen
+T:No matching step definition found for the step. Use the following code to create one:
+T:        [Then(@"the result should be (.*) on the screen")]
+T:        public void ThenTheResultShouldBeOnTheScreen(int p0)
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:Pending: No matching step definition found for one or more steps.
+T:using System;
+T:using TechTalk.SpecFlow;
+T:namespace MyNamespace
+T:{
+T:    [Binding]
+T:    public class StepDefinitions
+T:    {
+T:        [Given(@"I am on the Miles Kimball website")]
+T:        public void GivenIAmOnTheMilesKimballWebsite()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I dismiss the popup")]
+T:        public void GivenIDismissThePopup()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I search for Paua Shamrock Earrings using the SKU")]
+T:        public void GivenISearchForPauaShamrockEarringsUsingTheSKU()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click add to cart")]
+T:        public void GivenIClickAddToCart()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click View Cart / Checkout")]
+T:        public void GivenIClickViewCartCheckout()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click Checkout")]
+T:        public void GivenIClickCheckout()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click Checkout as Guest")]
+T:        public void GivenIClickCheckoutAsGuest()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"Complete the various fields")]
+T:        public void GivenCompleteTheVariousFields()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click Proceed to Payment & Review")]
+T:        public void GivenIClickProceedToPaymentReview()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I enter payment information")]
+T:        public void GivenIEnterPaymentInformation()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Given(@"I click Submit Order")]
+T:        public void GivenIClickSubmitOrder()
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:        
+T:        [Then(@"the result should be (.*) on the screen")]
+T:        public void ThenTheResultShouldBeOnTheScreen(int p0)
+T:        {
+T:            ScenarioContext.Current.Pending();
+T:        }
+T:    }
+T:}
+Test #8 is finished on thread #3 as Pending within 23.3648993 seconds
+Appdomain Disposed
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.4s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.2s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.1s)
+Test #5 is finished on thread #1 as Succeeded within 24.0989277 seconds
+B:Given I am on the Miles Kimball homepage
+Appdomain Disposed
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.9s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.1s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.7s)
+B:When I check the title
+B:Given I am on the Miles Kimball homepage
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.1s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.1s)
+Test #6 is finished on thread #2 as Succeeded within 24.8869576 seconds
+Appdomain Disposed
+Test #4 is finished on thread #0 as Succeeded within 25.1799702 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (10.1s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (11.4s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.3s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (4.1s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+Test #12 is finished on thread #6 as Succeeded within 34.3642753 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.0s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (14.0s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (16.6s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (14.7s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.3s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.3s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (4.1s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (4.2s)
+B:Then the alert should not be present
+Test #15 is finished on thread #9 as Succeeded within 41.2734867 seconds
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+Appdomain Disposed
+Test #14 is finished on thread #8 as Succeeded within 42.0105111 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I dismiss the alert
+T:skipped because of previous errors
+B:Then the alert should not be present
+T:skipped because of previous errors
+Test #13 is finished on thread #7 as Failed within 48.2057112 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I dismiss the alert
+T:skipped because of previous errors
+B:Then the alert should not be present
+T:skipped because of previous errors
+Test #10 is finished on thread #4 as Failed within 58.2620494 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I dismiss the alert
+T:skipped because of previous errors
+B:Then the alert should not be present
+T:skipped because of previous errors
+Cancelling because configured number of failures reached
+Test #11 is finished on thread #5 as Failed within 58.5710551 seconds
+Appdomain Disposed
+Total: 10
+Succeeded: 6
+Ignored: 0
+Pending: 1
+Skipped: 0
+Failed: 3

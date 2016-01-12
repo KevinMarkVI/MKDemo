@@ -1,0 +1,94 @@
+﻿Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#3: GuineaPig - 
+#6: GuineaPig2 - 
+#4: Verify Title 1 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+1
+#5: Verify Title 2 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+2
+#7: Verify Title 3 - TestAssembly:UnitTestProject1/Feature:GuineaPig2/Scenario:Verify+Title+3
+#8: Verify Title 4 - TestAssembly:UnitTestProject1/Feature:GuineaPig2/Scenario:Verify+Title+4
+#9: Verify Title 5 - TestAssembly:UnitTestProject1/Feature:GuineaPig2/Scenario:Verify+Title+5
+End: Test Suite Dump
+Scheduler: considering #4 for thread #0
+Scheduler: using #4 for thread #0
+Test #4 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #4/0 is started on thread #0
+Scheduler: considering #5 for thread #1
+Scheduler: using #5 for thread #1
+Test #5 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #5/0 is started on thread #1
+Scheduler: considering #7 for thread #2
+Scheduler: using #7 for thread #2
+Test #7 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #7/0 is started on thread #2
+Scheduler: considering #8 for thread #3
+Scheduler: using #8 for thread #3
+Test #8 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #8/0 is started on thread #3
+Scheduler: considering #9 for thread #4
+Scheduler: using #9 for thread #4
+Test #9 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #9/0 is started on thread #4
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (0.8s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+Test #7 is finished on thread #2 as Succeeded within 10.3154114 seconds
+Appdomain Disposed
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.0s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+Test #8 is finished on thread #3 as Succeeded within 10.8784186 seconds
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+Appdomain Disposed
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.9s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.3s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.2s)
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (0.9s)
+B:When I check the title
+Test #9 is finished on thread #4 as Succeeded within 11.8344551 seconds
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+Appdomain Disposed
+Test #5 is finished on thread #1 as Succeeded within 12.6004873 seconds
+Appdomain Disposed
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.6s)
+B:When I check the title
+T:I am a page title - Sauce Labs
+T:done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+Test #4 is finished on thread #0 as Succeeded within 13.3085304 seconds
+Appdomain Disposed
+Total: 5
+Succeeded: 5
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

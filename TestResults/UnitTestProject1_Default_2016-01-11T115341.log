@@ -1,0 +1,109 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+2 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+3 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+4 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+5
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#8: MK Individual Tests - 
+#12: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page
+#13: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page 2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+2
+#14: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page 3 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+3
+#15: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page 4 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+4
+#16: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page 5 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+5
+End: Test Suite Dump
+Scheduler: considering #12 for thread #0
+Scheduler: using #12 for thread #0
+Test #12 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #0
+Scheduler: considering #13 for thread #1
+Scheduler: using #13 for thread #1
+Test #13 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #1
+Scheduler: considering #14 for thread #2
+Scheduler: using #14 for thread #2
+Test #14 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #2
+Scheduler: considering #15 for thread #3
+Scheduler: using #15 for thread #3
+Test #15 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #3
+Scheduler: considering #16 for thread #4
+Scheduler: using #16 for thread #4
+Test #16 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #16/0 is started on thread #4
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.7s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.2s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.2s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.6s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.5s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.4s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.4s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.7s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.4s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.4s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.5s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.5s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (1.8s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (1.7s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (1.5s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (1.7s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.6s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.5s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.5s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (1.3s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (13.0s)
+Test #13 is finished on thread #1 as Succeeded within 55.0960408 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (13.0s)
+Test #16 is finished on thread #4 as Succeeded within 55.2030409 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (15.4s)
+Test #14 is finished on thread #2 as Succeeded within 58.0671366 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (15.1s)
+Test #12 is finished on thread #0 as Succeeded within 58.610155 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (19.0s)
+Test #15 is finished on thread #3 as Succeeded within 71.9305861 seconds
+Appdomain Disposed
+Total: 5
+Succeeded: 5
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

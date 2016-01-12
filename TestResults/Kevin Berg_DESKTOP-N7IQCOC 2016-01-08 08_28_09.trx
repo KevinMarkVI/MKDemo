@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="168d9b88-25a9-46a8-a780-ec542e65d824" name="Kevin Berg@DESKTOP-N7IQCOC 2016-01-08 08:28:09" runUser="DESKTOP-N7IQCOC\Kevin Berg" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="2ecf261a-2698-4b21-8325-aa84e94843db">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Kevin Berg_DESKTOP-N7IQCOC 2016-01-08 08_28_09" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2016-01-08T08:28:09.5503709-08:00" queuing="2016-01-08T08:28:10.0972421-08:00" start="2016-01-08T08:28:10.3316074-08:00" finish="2016-01-08T08:28:10.9566157-08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" error="0" failed="9" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="VerifyTitle4" storage="unittestproject1\bin\release\unittestproject1.dll" id="dc6ef916-d084-1d29-f7f2-3ccdbaa98396">
+      <Description>Verify Title 4</Description>
+      <Execution id="2f117fb9-810c-4300-9ced-5d9f9b25e464" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPigFeature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle4" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle8" storage="unittestproject1\bin\release\unittestproject1.dll" id="70a88644-2ce8-33d3-87e8-b152046ba72c">
+      <Description>Verify Title 8</Description>
+      <Execution id="0d7f603f-cc81-4ab1-9cc0-62cc9f5722e2" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig2</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPig2Feature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle8" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle3" storage="unittestproject1\bin\release\unittestproject1.dll" id="d54640f1-49a7-b607-4695-016770186f5b">
+      <Description>Verify Title 3</Description>
+      <Execution id="ee80fb11-cec5-408d-a1d0-3ce43b8aa175" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPigFeature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle3" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle2" storage="unittestproject1\bin\release\unittestproject1.dll" id="016100af-c33e-e213-b3f4-402e13c037cd">
+      <Description>Verify Title 2</Description>
+      <Execution id="85e354e7-dde3-4e6c-8e9b-655c21944e2d" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPigFeature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle2" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle7" storage="unittestproject1\bin\release\unittestproject1.dll" id="dca60a3e-7b12-f201-0f11-4917d4bd1b1e">
+      <Description>Verify Title 7</Description>
+      <Execution id="0f66b81e-a571-4f6e-98c2-da6da82004c3" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig2</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPig2Feature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle7" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle5" storage="unittestproject1\bin\release\unittestproject1.dll" id="009ebbbd-8748-c04e-fb6b-691a77535b3e">
+      <Description>Verify Title 5</Description>
+      <Execution id="cff4b5d3-6b3b-474b-a074-952cc89f3d35" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig2</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPig2Feature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle5" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle" storage="unittestproject1\bin\release\unittestproject1.dll" id="6d389503-3960-5ec3-fae7-b6152b9ba121">
+      <Description>Verify Title</Description>
+      <Execution id="c6178565-d7b9-4699-87b2-9cfeb4d60151" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPigFeature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle9" storage="unittestproject1\bin\release\unittestproject1.dll" id="fb1306a8-1061-9302-c332-6119c7456244">
+      <Description>Verify Title 9</Description>
+      <Execution id="005e6e05-bfb4-48b4-9d79-5c682402152a" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig2</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPig2Feature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle9" />
+    </UnitTest>
+    <UnitTest name="VerifyTitle6" storage="unittestproject1\bin\release\unittestproject1.dll" id="74331a69-ff7b-51ad-49b2-3de330cea1f2">
+      <Description>Verify Title 6</Description>
+      <Execution id="ec92e609-cde1-479d-a8ad-9fd1f9818760" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>GuineaPig2</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/Kevin Berg/Documents/Visual Studio 2015/Projects/UnitTestProject1/UnitTestProject1/bin/Release/UnitTestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UnitTestProject1.GuineaPig2Feature, UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerifyTitle6" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="009ebbbd-8748-c04e-fb6b-691a77535b3e" executionId="cff4b5d3-6b3b-474b-a074-952cc89f3d35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="74331a69-ff7b-51ad-49b2-3de330cea1f2" executionId="ec92e609-cde1-479d-a8ad-9fd1f9818760" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dca60a3e-7b12-f201-0f11-4917d4bd1b1e" executionId="0f66b81e-a571-4f6e-98c2-da6da82004c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70a88644-2ce8-33d3-87e8-b152046ba72c" executionId="0d7f603f-cc81-4ab1-9cc0-62cc9f5722e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb1306a8-1061-9302-c332-6119c7456244" executionId="005e6e05-bfb4-48b4-9d79-5c682402152a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d389503-3960-5ec3-fae7-b6152b9ba121" executionId="c6178565-d7b9-4699-87b2-9cfeb4d60151" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="016100af-c33e-e213-b3f4-402e13c037cd" executionId="85e354e7-dde3-4e6c-8e9b-655c21944e2d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d54640f1-49a7-b607-4695-016770186f5b" executionId="ee80fb11-cec5-408d-a1d0-3ce43b8aa175" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc6ef916-d084-1d29-f7f2-3ccdbaa98396" executionId="2f117fb9-810c-4300-9ced-5d9f9b25e464" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="cff4b5d3-6b3b-474b-a074-952cc89f3d35" testId="009ebbbd-8748-c04e-fb6b-691a77535b3e" testName="VerifyTitle5" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.3784801-08:00" endTime="2016-01-08T08:28:10.7378928-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cff4b5d3-6b3b-474b-a074-952cc89f3d35">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPig2Feature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPig2Feature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig2.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ec92e609-cde1-479d-a8ad-9fd1f9818760" testId="74331a69-ff7b-51ad-49b2-3de330cea1f2" testName="VerifyTitle6" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.7691040-08:00" endTime="2016-01-08T08:28:10.7691040-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec92e609-cde1-479d-a8ad-9fd1f9818760">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPig2Feature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPig2Feature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig2.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0f66b81e-a571-4f6e-98c2-da6da82004c3" testId="dca60a3e-7b12-f201-0f11-4917d4bd1b1e" testName="VerifyTitle7" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.7847245-08:00" endTime="2016-01-08T08:28:10.7847245-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f66b81e-a571-4f6e-98c2-da6da82004c3">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPig2Feature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPig2Feature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig2.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0d7f603f-cc81-4ab1-9cc0-62cc9f5722e2" testId="70a88644-2ce8-33d3-87e8-b152046ba72c" testName="VerifyTitle8" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8003468-08:00" endTime="2016-01-08T08:28:10.8003468-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d7f603f-cc81-4ab1-9cc0-62cc9f5722e2">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPig2Feature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPig2Feature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig2.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="005e6e05-bfb4-48b4-9d79-5c682402152a" testId="fb1306a8-1061-9302-c332-6119c7456244" testName="VerifyTitle9" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8159743-08:00" endTime="2016-01-08T08:28:10.8159743-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="005e6e05-bfb4-48b4-9d79-5c682402152a">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPig2Feature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPig2Feature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig2.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c6178565-d7b9-4699-87b2-9cfeb4d60151" testId="6d389503-3960-5ec3-fae7-b6152b9ba121" testName="VerifyTitle" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8315958-08:00" endTime="2016-01-08T08:28:10.8315958-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6178565-d7b9-4699-87b2-9cfeb4d60151">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPigFeature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPigFeature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="85e354e7-dde3-4e6c-8e9b-655c21944e2d" testId="016100af-c33e-e213-b3f4-402e13c037cd" testName="VerifyTitle2" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8472237-08:00" endTime="2016-01-08T08:28:10.8472237-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="85e354e7-dde3-4e6c-8e9b-655c21944e2d">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPigFeature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPigFeature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ee80fb11-cec5-408d-a1d0-3ce43b8aa175" testId="d54640f1-49a7-b607-4695-016770186f5b" testName="VerifyTitle3" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8629921-08:00" endTime="2016-01-08T08:28:10.8629921-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee80fb11-cec5-408d-a1d0-3ce43b8aa175">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPigFeature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPigFeature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2f117fb9-810c-4300-9ced-5d9f9b25e464" testId="dc6ef916-d084-1d29-f7f2-3ccdbaa98396" testName="VerifyTitle4" computerName="DESKTOP-N7IQCOC" startTime="2016-01-08T08:28:10.8629921-08:00" endTime="2016-01-08T08:28:10.8784768-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f117fb9-810c-4300-9ced-5d9f9b25e464">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method UnitTestProject1.GuineaPigFeature.FeatureSetup threw exception. TechTalk.SpecFlow.SpecFlowException: TechTalk.SpecFlow.SpecFlowException: Unable to load plugin: SpecRun. Please check http://go.specflow.org/doc-plugins for details. ---&gt; System.IO.FileNotFoundException: Could not load file or assembly 'SpecRun.SpecFlowPlugin' or one of its dependencies. The system cannot find the file specified.WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+ --- End of inner exception stack trace ---
+    at TechTalk.SpecFlow.Infrastructure.RuntimePluginLoader.LoadPlugin(PluginDescriptor pluginDescriptor)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.&lt;&gt;c__DisplayClass3.&lt;LoadPlugins&gt;b__1(PluginDescriptor pd)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.&lt;ConcatIterator&gt;d__58`1.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.LoadPlugins(IRuntimeConfigurationProvider configurationProvider, ObjectContainer container)
+   at TechTalk.SpecFlow.Infrastructure.TestRunContainerBuilder.CreateContainer(IRuntimeConfigurationProvider configurationProvider)
+   at TechTalk.SpecFlow.TestRunnerManager.CreateTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(TestRunnerKey key)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(Assembly testAssembly, Boolean async)
+   at TechTalk.SpecFlow.TestRunnerManager.GetTestRunner()
+   at UnitTestProject1.GuineaPigFeature.FeatureSetup(TestContext testContext) in C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\GuineaPig.feature.cs:line 0
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Checkout+Page+1+and+Submit
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#8: MK Individual Tests - 
+#16: Complete Checkout Page 1 and Submit - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Checkout+Page+1+and+Submit
+End: Test Suite Dump
+Scheduler: considering #16 for thread #0
+Scheduler: using #16 for thread #0
+Test #16 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #16/0 is started on thread #0
+B:Given I am on the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (53.8s)
+B:When I complete the form
+T:done: MKIndividualTestsSteps.WhenICompleteTheForm() (15.8s)
+B:When I click the Proceed to Payment and Review Button
+T:done: MKIndividualTestsSteps.WhenIClickTheProceedToPaymentAndReviewButton() (0.4s)
+B:Then I should be on the second checkout page
+T:error: This is not the correct page
+Test #16 is finished on thread #0 as Failed within 89.102377 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

@@ -1,0 +1,117 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+1 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+2 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+3 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+4 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+5
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#11: Search for Paua Shamrock Earrings - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings
+#12: Search for Paua Shamrock Earrings 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+1
+#13: Search for Paua Shamrock Earrings 2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+2
+#14: Search for Paua Shamrock Earrings 3 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+3
+#15: Search for Paua Shamrock Earrings 4 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+4
+#16: Search for Paua Shamrock Earrings 5 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings+5
+End: Test Suite Dump
+Scheduler: considering #11 for thread #0
+Scheduler: using #11 for thread #0
+Test #11 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #0
+Scheduler: considering #12 for thread #1
+Scheduler: using #12 for thread #1
+Test #12 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #1
+Scheduler: considering #13 for thread #2
+Scheduler: using #13 for thread #2
+Test #13 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #2
+Scheduler: considering #14 for thread #3
+Scheduler: using #14 for thread #3
+Test #14 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #3
+Scheduler: considering #15 for thread #4
+Scheduler: using #15 for thread #4
+Test #15 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #4
+Scheduler: considering #16 for thread #5
+Scheduler: using #16 for thread #5
+Test #16 is scheduled for thread #5
+Thread #5: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #16/0 is started on thread #5
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (11.1s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.3s)
+B:When I enter the SKU in the search box and submit
+T:done: MKIndividualTestsSteps.WhenIEnterTheSKUInTheSearchBoxAndSubmit() (1.5s)
+B:Then I should be on the Paua Shamrock product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (13.7s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (14.7s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.0s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.3s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnThePauaShamrockProductPage() (5.2s)
+Test #11 is finished on thread #0 as Succeeded within 38.8992609 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (17.2s)
+B:And I dismiss the popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (4.7s)
+B:When I enter the SKU in the search box and submit
+T:done: MKIndividualTestsSteps.WhenIEnterTheSKUInTheSearchBoxAndSubmit() (1.4s)
+B:Then I should be on the Paua Shamrock product page
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the SKU in the search box and submit
+T:skipped because of previous errors
+B:Then I should be on the Paua Shamrock product page
+T:skipped because of previous errors
+Test #15 is finished on thread #4 as Failed within 54.4367643 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the SKU in the search box and submit
+T:skipped because of previous errors
+B:Then I should be on the Paua Shamrock product page
+T:skipped because of previous errors
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnThePauaShamrockProductPage() (8.7s)
+Test #12 is finished on thread #1 as Failed within 55.6688054 seconds
+Appdomain Disposed
+Test #14 is finished on thread #3 as Succeeded within 55.4837981 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the SKU in the search box and submit
+T:skipped because of previous errors
+B:Then I should be on the Paua Shamrock product page
+T:skipped because of previous errors
+Cancelling because configured number of failures reached
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the SKU in the search box and submit
+T:skipped because of previous errors
+B:Then I should be on the Paua Shamrock product page
+T:skipped because of previous errors
+Test #16 is finished on thread #5 as Failed within 57.4609012 seconds
+Appdomain Disposed
+Test #13 is finished on thread #2 as Failed within 58.1158836 seconds
+Appdomain Disposed
+Total: 6
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 4

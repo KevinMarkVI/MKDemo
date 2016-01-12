@@ -1,0 +1,116 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+2 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+3 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+4 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+5 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+6
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#10: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+#11: Confirm Alert is Present and Dismiss 2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+2
+#12: Confirm Alert is Present and Dismiss 3 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+3
+#13: Confirm Alert is Present and Dismiss 4 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+4
+#14: Confirm Alert is Present and Dismiss 5 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+5
+#15: Confirm Alert is Present and Dismiss 6 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss+6
+End: Test Suite Dump
+Scheduler: considering #10 for thread #0
+Scheduler: using #10 for thread #0
+Test #10 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #10/0 is started on thread #0
+Scheduler: considering #11 for thread #1
+Scheduler: using #11 for thread #1
+Test #11 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #1
+Scheduler: considering #12 for thread #2
+Scheduler: using #12 for thread #2
+Test #12 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #2
+Scheduler: considering #13 for thread #3
+Scheduler: using #13 for thread #3
+Test #13 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #3
+Scheduler: considering #14 for thread #4
+Scheduler: using #14 for thread #4
+Test #14 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #4
+Scheduler: considering #15 for thread #5
+Scheduler: using #15 for thread #5
+Test #15 is scheduled for thread #5
+Thread #5: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #5
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (5.9s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (6.2s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (6.2s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.7s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (6.7s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.7s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (1.0s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.9s)
+B:When I dismiss the alert
+Test #12 is finished on thread #2 as Succeeded within 18.2467025 seconds
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (7.1s)
+B:And the Free Shipping alert Appears
+Appdomain Disposed
+Test #10 is finished on thread #0 as Succeeded within 18.5767118 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (7.5s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (0.6s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.5s)
+B:When I dismiss the alert
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+Test #15 is finished on thread #5 as Succeeded within 18.6597182 seconds
+Appdomain Disposed
+Test #11 is finished on thread #1 as Succeeded within 19.4057461 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIDismissTheAlert() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.1s)
+Test #13 is finished on thread #3 as Succeeded within 19.8417653 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I dismiss the alert
+T:skipped because of previous errors
+B:Then the alert should not be present
+T:skipped because of previous errors
+Test #14 is finished on thread #4 as Failed within 38.5534812 seconds
+Appdomain Disposed
+Total: 6
+Succeeded: 5
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

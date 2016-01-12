@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="5" result="Failed" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.0.5813.39036" clr-version="4.0.30319.42000" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:53Z" duration="29.087665">
+  <command-line><![CDATA["C:\Users\Kevin Berg\.dnx\bin\nunit3-console.EXE" UnitTestProject1.sln /config:Release --workers=5]]></command-line>
+  <test-suite type="Project" id="2" name="UnitTestProject1.sln" fullname="C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1.sln" testcasecount="5" result="Failed" site="Child" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1-1007" name="UnitTestProject1.dll" fullname="C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\bin\Release\UnitTestProject1.dll" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:53Z" duration="28.971425" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <environment framework-version="3.0.5813.39031" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.10586.0" platform="Win32NT" cwd="C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1" machine-name="DESKTOP-N7IQCOC" user="Kevin Berg" user-domain="DESKTOP-N7IQCOC" culture="en-US" uiculture="en-US" os-architecture="x64" />
+      <settings>
+        <setting name="ActiveConfig" value="Release" />
+        <setting name="WorkDirectory" value="C:\Users\Kevin Berg\Documents\Visual Studio 2015\Projects\UnitTestProject1" />
+        <setting name="NumberOfTestWorkers" value="5" />
+      </settings>
+      <properties>
+        <property name="ParallelScope" value="Fixtures" />
+        <property name="_PID" value="2164" />
+        <property name="_APPDOMAIN" value="test-domain-UnitTestProject1.sln" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1-1008" name="UnitTestProject1" fullname="UnitTestProject1" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:53Z" duration="28.958023" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1-1000" name="GuineaPigFeature" fullname="UnitTestProject1.GuineaPigFeature" classname="UnitTestProject1.GuineaPigFeature" runstate="Runnable" testcasecount="2" result="Passed" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:44Z" duration="19.839014" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Description" value="GuineaPig" />
+          </properties>
+          <output><![CDATA[-> warning: The previous FeatureContext was not disposed.
+]]></output>
+          <test-case id="1-1001" name="VerifyTitle1" fullname="UnitTestProject1.GuineaPigFeature.VerifyTitle1" methodname="VerifyTitle1" classname="UnitTestProject1.GuineaPigFeature" runstate="Runnable" seed="798259755" result="Passed" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:35Z" duration="10.296246" asserts="0">
+            <properties>
+              <property name="Description" value="Verify Title 1" />
+            </properties>
+            <output><![CDATA[-> warning: The previous ScenarioContext was not disposed.
+Given I am on the Guinea Pig Website
+-> done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.6s)
+When I check the title
+I am a page title - Sauce Labs
+-> done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+Then the title should be what I expect
+-> done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+]]></output>
+          </test-case>
+          <test-case id="1-1002" name="VerifyTitle2" fullname="UnitTestProject1.GuineaPigFeature.VerifyTitle2" methodname="VerifyTitle2" classname="UnitTestProject1.GuineaPigFeature" runstate="Runnable" seed="1630670862" result="Passed" start-time="2016-01-08 17:19:35Z" end-time="2016-01-08 17:19:44Z" duration="8.981580" asserts="0">
+            <properties>
+              <property name="Description" value="Verify Title 2" />
+            </properties>
+            <output><![CDATA[Given I am on the Guinea Pig Website
+-> done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.1s)
+When I check the title
+I am a page title - Sauce Labs
+-> done: GuineaPigSteps.WhenICheckTheTitle() (0.5s)
+Then the title should be what I expect
+-> done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1003" name="GuineaPig2Feature" fullname="UnitTestProject1.GuineaPig2Feature" classname="UnitTestProject1.GuineaPig2Feature" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:53Z" duration="28.908960" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Description" value="GuineaPig2" />
+          </properties>
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <output><![CDATA[-> warning: The previous FeatureContext was already disposed.
+]]></output>
+          <test-case id="1-1004" name="VerifyTitle3" fullname="UnitTestProject1.GuineaPig2Feature.VerifyTitle3" methodname="VerifyTitle3" classname="UnitTestProject1.GuineaPig2Feature" runstate="Runnable" seed="17143493" result="Passed" start-time="2016-01-08 17:19:24Z" end-time="2016-01-08 17:19:32Z" duration="7.988910" asserts="0">
+            <properties>
+              <property name="Description" value="Verify Title 3" />
+            </properties>
+            <output><![CDATA[Given I am on the Guinea Pig Website
+-> done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (0.9s)
+When I check the title
+I am a page title - Sauce Labs
+-> done: GuineaPigSteps.WhenICheckTheTitle() (0.0s)
+Then the title should be what I expect
+-> done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+]]></output>
+          </test-case>
+          <test-case id="1-1005" name="VerifyTitle4" fullname="UnitTestProject1.GuineaPig2Feature.VerifyTitle4" methodname="VerifyTitle4" classname="UnitTestProject1.GuineaPig2Feature" runstate="Runnable" seed="458445963" result="Passed" start-time="2016-01-08 17:19:32Z" end-time="2016-01-08 17:19:44Z" duration="11.371073" asserts="0">
+            <properties>
+              <property name="Description" value="Verify Title 4" />
+            </properties>
+            <output><![CDATA[Given I am on the Guinea Pig Website
+-> done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (1.2s)
+When I check the title
+I am a page title - Sauce Labs
+-> done: GuineaPigSteps.WhenICheckTheTitle() (0.1s)
+Then the title should be what I expect
+-> done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.0s)
+-> warning: The previous ScenarioContext was already disposed.
+]]></output>
+          </test-case>
+          <test-case id="1-1006" name="VerifyTitle5" fullname="UnitTestProject1.GuineaPig2Feature.VerifyTitle5" methodname="VerifyTitle5" classname="UnitTestProject1.GuineaPig2Feature" runstate="Runnable" seed="1323870426" result="Failed" label="Error" start-time="2016-01-08 17:19:44Z" end-time="2016-01-08 17:19:53Z" duration="8.948605" asserts="0">
+            <properties>
+              <property name="Description" value="Verify Title 5" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.GetStepMatch(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()]]></stack-trace>
+            </failure>
+            <output><![CDATA[Given I am on the Guinea Pig Website
+-> error: Object reference not set to an instance of an object.
+When I check the title
+-> error: Object reference not set to an instance of an object.
+Then the title should be what I expect
+-> error: Object reference not set to an instance of an object.
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
