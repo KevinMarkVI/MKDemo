@@ -6,7 +6,6 @@ using UnitTestProject1.PageObjects.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
-using OpenQA.Selenium.Support.PageObjects;
 
 namespace UnitTestProject1
 {
@@ -194,14 +193,21 @@ namespace UnitTestProject1
 
             MKCheckoutPage1 checkoutPage1 = new MKCheckoutPage1(driver);
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
-
         }
 
-        [When(@"I complete the form")]
+        [When(@"I complete the form and confirm order summary information")]
         public void WhenICompleteTheForm()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
             checkoutPage1.completeForm();
+            Assert.AreEqual(checkoutPage1.shipToBillingAddressRadioButton.GetAttribute("checked"), "true");
+            Assert.AreEqual(checkoutPage1.giftRadioButton.GetAttribute("checked"), "true");
+            //Confirm Order Summary Info
+            Assert.AreEqual(checkoutPage1.orderSummaryItems.Text, "1");
+            Assert.AreEqual(checkoutPage1.orderSummaryMerchandiseTotal.Text, "$6.99");
+            Assert.AreEqual(checkoutPage1.orderSummaryProcessingFee.Text, "$1.99");
+            Assert.AreEqual(checkoutPage1.orderSummaryShippingAndHandling.Text, "$3.99");
+            Assert.AreEqual(checkoutPage1.orderSummaryTotal.Text, "$12.97");
         }
 
         [When(@"I click the Proceed to Payment and Review Button")]
@@ -218,6 +224,71 @@ namespace UnitTestProject1
         {
             MKCheckoutPage2 checkoutPage2 = new MKCheckoutPage2(driver);
             Assert.IsTrue(checkoutPage2.title.Contains("Step 2"));
+        }
+
+        [Given(@"I am on the second checkout page")]
+        public void GivenIAmOnTheSecondCheckoutPage()
+        {
+            driver.Navigate().GoToUrl(MKProductPage.URL);
+            //Pause for popup transition
+            System.Threading.Thread.Sleep(3000);
+            MKProductPage productPage = new MKProductPage(driver);
+
+            productPage.closePopup.Click();
+            //Pause for popup transition
+            System.Threading.Thread.Sleep(3000);
+
+            productPage.addToCartButton.Click();
+            //Wait for popup to be displayed
+            System.Threading.Thread.Sleep(1000);
+
+            productPage.popupViewCartCheckoutButton.Click();
+            MKShoppingCartPage shoppingCartPage = new MKShoppingCartPage(driver);
+            shoppingCartPage.checkoutButton.Click();
+
+            MKLoginPage loginPage = new MKLoginPage(driver);
+            loginPage.checkoutAsGuestButton.Click();
+
+            MKCheckoutPage1 checkoutPage1 = new MKCheckoutPage1(driver);
+            checkoutPage1.completeForm();
+
+            checkoutPage1.proceedToPaymentAndReviewButton.Click();
+            //Wait for form submit
+            System.Threading.Thread.Sleep(2000);
+
+            MKCheckoutPage2 checkoutPage2 = new MKCheckoutPage2(driver);
+            ScenarioContext.Current["checkoutPage2"] = checkoutPage2;
+        }
+
+        [Then(@"the correct information should be present")]
+        public void ThenTheCorrectInformationShouldBePresent()
+        {
+            MKCheckoutPage2 checkoutPage2 = (MKCheckoutPage2)ScenarioContext.Current["checkoutPage2"];
+            Assert.AreEqual(checkoutPage2.summaryMerchandiseTotal.Text, "$6.99");
+            Assert.AreEqual(checkoutPage2.summaryProcessingFee.Text, "$1.99");
+            Assert.AreEqual(checkoutPage2.summaryShippingTotal.Text, "$3.99");
+            Assert.AreEqual(checkoutPage2.summaryTaxTotal.Text, "$0.00");
+            Assert.AreEqual(checkoutPage2.summaryTotal.Text, "$12.97");
+            Assert.IsTrue(checkoutPage2.summaryShippedTo.Text.Contains("Test Automation"));
+            Assert.AreEqual(checkoutPage2.summaryProductDescription.Text, "Paua Shamrock Earrings");
+        }
+
+        [When(@"I fill complete the payment information")]
+        public void WhenIFillCompleteThePaymentInformation()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I click the submit order button")]
+        public void WhenIClickTheSubmitOrderButton()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"I should see the google popup")]
+        public void ThenIShouldSeeTheGooglePopup()
+        {
+            ScenarioContext.Current.Pending();
         }
 
     }

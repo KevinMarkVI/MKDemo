@@ -42,6 +42,26 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_PaymentReviewButton")]
         public IWebElement proceedToPaymentAndReviewButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHAlsoShippingAddressRadioButton")]
+        public IWebElement shipToBillingAddressRadioButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_ctl00_1")]
+        public IWebElement giftRadioButton { get; set; }
+
+        [FindsBy(How = How.ClassName, Using = "order-summary-amount")]
+        public IWebElement orderSummaryItems { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_OrderTotals_MerchandiseTotal")]
+        public IWebElement orderSummaryMerchandiseTotal { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_OrderTotals_ProcessingFeeTotal")]
+        public IWebElement orderSummaryProcessingFee { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_OrderTotals_ShippingTotal")]
+        public IWebElement orderSummaryShippingAndHandling { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_OrderTotals_OrderTotal")]
+        public IWebElement orderSummaryTotal { get; set; }
 
         public MKCheckoutPage1(IWebDriver webDriver)
         {

@@ -44,10 +44,19 @@ Scenario: Navigate to CheckoutPage1
 
 Scenario: Complete Checkout Page 1 and Submit
 	Given I am on the first Checkout Page
-	When I complete the form
+	When I complete the form and confirm order summary information
 	When I click the Proceed to Payment and Review Button
 	Then I should be on the second checkout page
 
+Scenario: Confrim Order Summary information on Checkout Page2
+	Given I am on the second checkout page
+	Then the correct information should be present
+
+Scenario: Complete Payment Information and Submit Order
+	Given I am on the second checkout page
+	When I fill complete the payment information
+	When I click the submit order button
+	Then I should see the google popup
 
 
 
