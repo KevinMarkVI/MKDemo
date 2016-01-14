@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#24: My Account Login Error Testing - 
+#25: Navigate to the My Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page
+End: Test Suite Dump
+Scheduler: considering #25 for thread #0
+Scheduler: using #25 for thread #0
+Test #25 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #25/0 is started on thread #0
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (16.7s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.8s)
+B:When I Click on the My Account Link
+T:error: Could not find element by: By.Id: ctl00_cphBody_txtLoginEmailAddress
+B:Then I should be on the Account Login Page
+T:skipped because of previous errors
+Test #25 is finished on thread #0 as Failed within 57.8113897 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

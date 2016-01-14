@@ -1,0 +1,82 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Email+should+Display+an+Error | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Password+should+Display+an+Error | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:After+Entering+a+Valid+Email+and+Password+I+should+see+the+Account+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#24: My Account Login Error Testing - 
+#25: Navigate to the My Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page
+#26: Entering an Invalid Email should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Email+should+Display+an+Error
+#27: Entering an Invalid Password should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Password+should+Display+an+Error
+#28: After Entering a Valid Email and Password I should see the Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:After+Entering+a+Valid+Email+and+Password+I+should+see+the+Account+Page
+End: Test Suite Dump
+Scheduler: considering #25 for thread #0
+Scheduler: using #25 for thread #0
+Test #25 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #25/0 is started on thread #0
+Scheduler: considering #26 for thread #1
+Scheduler: using #26 for thread #1
+Test #26 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #26/0 is started on thread #1
+Scheduler: considering #27 for thread #2
+Scheduler: using #27 for thread #2
+Test #27 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #27/0 is started on thread #2
+Scheduler: considering #28 for thread #3
+Scheduler: using #28 for thread #3
+Test #28 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #28/0 is started on thread #3
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the MK Account Login Page
+B:Given I am on the MK Account Login Page
+B:Given I am on the MK Account Login Page
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (12.8s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.5s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest100'
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (16.6s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (16.7s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (16.1s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest100") (3.5s)
+B:Then I should be on the My Account Page
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.5s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest10'
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (2.1s)
+B:When I Click on the My Account Link
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.8s)
+B:When I enter the email address 'SSBtestautomation@gmail' and the password 'SSBtest10'
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest10") (3.3s)
+B:Then I should see the Invalid Username and Password Error
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest10") (3.7s)
+B:Then I should see the Invalid Username and Password Error
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldBeOnTheMyAccountPage() (5.6s)
+Test #28 is finished on thread #3 as Succeeded within 41.2345554 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (7.9s)
+Test #27 is finished on thread #2 as Succeeded within 47.8165994 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (7.4s)
+Test #26 is finished on thread #1 as Succeeded within 48.2270937 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.WhenIClickOnTheMyAccountLink() (13.5s)
+B:Then I should be on the Account Login Page
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldBeOnTheAccountPage() (0.2s)
+Test #25 is finished on thread #0 as Succeeded within 50.5204198 seconds
+Appdomain Disposed
+Total: 4
+Succeeded: 4
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

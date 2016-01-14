@@ -1,0 +1,99 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Email+should+Display+an+Error | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Password+should+Display+an+Error | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+a+Valid+Email+and+Password+should+Not+Display+an+Error | testpath:TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:After+Entering+a+Valid+Email+and+Password+I+should+see+the+Account+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#24: My Account Login Error Testing - 
+#25: Navigate to the My Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page
+#26: Entering an Invalid Email should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Email+should+Display+an+Error
+#27: Entering an Invalid Password should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Password+should+Display+an+Error
+#28: Entering a Valid Email and Password should Not Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+a+Valid+Email+and+Password+should+Not+Display+an+Error
+#29: After Entering a Valid Email and Password I should see the Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:After+Entering+a+Valid+Email+and+Password+I+should+see+the+Account+Page
+End: Test Suite Dump
+Scheduler: considering #25 for thread #0
+Scheduler: using #25 for thread #0
+Test #25 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #25/0 is started on thread #0
+Scheduler: considering #26 for thread #1
+Scheduler: using #26 for thread #1
+Test #26 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #26/0 is started on thread #1
+Scheduler: considering #27 for thread #2
+Scheduler: using #27 for thread #2
+Test #27 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #27/0 is started on thread #2
+Scheduler: considering #28 for thread #3
+Scheduler: using #28 for thread #3
+Test #28 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #28/0 is started on thread #3
+Scheduler: considering #29 for thread #4
+Scheduler: using #29 for thread #4
+Test #29 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #29/0 is started on thread #4
+B:Given I am on the MK Account Login Page
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the MK Account Login Page
+B:Given I am on the MK Account Login Page
+B:Given I am on the MK Account Login Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (10.1s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (11.2s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.4s)
+B:When I Click on the My Account Link
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (11.9s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (11.3s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.9s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest100'
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.6s)
+B:When I enter the email address 'SSBtestautomation@gmail' and the password 'SSBtest10'
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.5s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest100'
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest10") (2.9s)
+B:Then I should see the Invalid Username and Password Error
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest100") (3.8s)
+B:Then I should be on the My Account Page
+T:done: MyAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest100") (3.5s)
+B:Then I should Not see the Invalid Username and Password Error
+T:done: MyAccountLoginErrorTestingSteps.WhenIClickOnTheMyAccountLink() (6.8s)
+B:Then I should be on the Account Login Page
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldBeOnTheAccountPage() (0.1s)
+Test #25 is finished on thread #0 as Succeeded within 35.1895666 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (5.3s)
+Test #26 is finished on thread #1 as Succeeded within 38.3250456 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldBeOnTheMyAccountPage() (5.5s)
+Test #29 is finished on thread #4 as Succeeded within 38.8921295 seconds
+Appdomain Disposed
+T:done: MyAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (15.9s)
+B:And I dismiss the Free Shipping popup
+T:done: MyAccountLoginErrorTestingSteps.ThenIShouldNotSeeTheInvalidUsernameAndPasswordError() (5.8s)
+Test #28 is finished on thread #3 as Succeeded within 40.4886152 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest10'
+T:skipped because of previous errors
+B:Then I should see the Invalid Username and Password Error
+T:skipped because of previous errors
+Test #27 is finished on thread #2 as Failed within 60.6370397 seconds
+Appdomain Disposed
+Total: 5
+Succeeded: 4
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

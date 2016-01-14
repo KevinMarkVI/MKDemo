@@ -84,7 +84,9 @@
     <Compile Include="Hooks\Hooks.cs" />
     <Compile Include="MKEndToEndTestCaseSteps.cs" />
     <Compile Include="MKIndividualTestsSteps.cs" />
+    <Compile Include="MyAccountLoginErrorTestingSteps.cs" />
     <Compile Include="PageObjects\PageBase.cs" />
+    <Compile Include="PageObjects\Pages\MKAccountLoginPage.cs" />
     <Compile Include="PageObjects\Pages\MKCheckoutPage1.cs" />
     <Compile Include="PageObjects\Pages\MKCheckoutPage2.cs" />
     <Compile Include="PageObjects\Pages\MKHomePage.cs" />
@@ -99,9 +101,15 @@
       <DependentUpon>MKIndividualTests.feature</DependentUpon>
     </Compile>
     <Compile Include="PageObjects\Pages\MKLoginPage.cs" />
+    <Compile Include="PageObjects\Pages\MKMyAccountPage.cs" />
     <Compile Include="PageObjects\Pages\MKOrderConfirmationPage.cs" />
     <Compile Include="PageObjects\Pages\MKProductPage.cs" />
     <Compile Include="PageObjects\Pages\MKShoppingCartPage.cs" />
+    <Compile Include="MKAccountLoginErrorTesting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MKAccountLoginErrorTesting.feature</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CustomRemoteWebdriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,7 @@
     <None Include="App.config" />
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <None Include="GuineaPig.feature">
@@ -123,6 +132,10 @@
     <None Include="MKIndividualTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MKIndividualTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="MKAccountLoginErrorTesting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MKAccountLoginErrorTesting.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>

@@ -22,6 +22,10 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_btnSearch")]
         public IWebElement searchInputSubmitButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_btnMyAccount")]
+        public IWebElement myAccountHeaderButton { get; set; }
+
+
         public MKHomePage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
