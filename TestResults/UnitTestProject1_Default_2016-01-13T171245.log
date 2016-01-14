@@ -1,0 +1,44 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+present+on+homepage | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#10: Confirm Alert is present on homepage - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+present+on+homepage
+#11: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+End: Test Suite Dump
+Scheduler: considering #10 for thread #0
+Scheduler: using #10 for thread #0
+Test #10 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #10/0 is started on thread #0
+Scheduler: considering #11 for thread #1
+Scheduler: using #11 for thread #1
+Test #11 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #1
+B:Given I am on the Miles Kimball website
+B:Given I am on the Miles Kimball homepage
+T:done: MKEndToEndTestCaseSteps.GivenIAmOnTheMilesKimballWebsite() (13.8s)
+B:Then the free shipping alert should be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldBePresent() (0.5s)
+Test #10 is finished on thread #0 as Succeeded within 29.7061552 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.5s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.5s)
+B:When I dismiss the popup
+T:done: MKIndividualTestsSteps.WhenIDismissThePopup() (1.3s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (1.5s)
+Test #11 is finished on thread #1 as Succeeded within 37.8285307 seconds
+Appdomain Disposed
+Total: 2
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

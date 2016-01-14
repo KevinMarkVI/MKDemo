@@ -11,7 +11,7 @@ namespace UnitTestProject1.PageObjects.Pages
     class MKProductPage : PageBase
     {
 
-        public static readonly Uri URL = new Uri("http://www.mileskimball.com/buy-paua-shamrock-earrings-340665");
+        public static readonly Uri URL = new Uri("https://www.mileskimball.com/buy-paua-shamrock-earrings-340665");
 
         [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_rptDisplayItems_ctl00_btnAddToCart")]
         public IWebElement addToCartButton { get; set; }

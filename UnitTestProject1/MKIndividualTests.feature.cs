@@ -62,176 +62,236 @@ namespace UnitTestProject1
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Confirm Alert is Present and Dismiss", SourceLine=4)]
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm Alert is present on homepage", SourceLine=3)]
+        public virtual void ConfirmAlertIsPresentOnHomepage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm Alert is present on homepage", ((string[])(null)));
+#line 4
+this.ScenarioSetup(scenarioInfo);
+#line 5
+ testRunner.Given("I am on the Miles Kimball website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.Then("the free shipping alert should be present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm Alert is Present and Dismiss", SourceLine=7)]
         public virtual void ConfirmAlertIsPresentAndDismiss()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm Alert is Present and Dismiss", ((string[])(null)));
-#line 5
-this.ScenarioSetup(scenarioInfo);
-#line 6
- testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.And("the Free Shipping alert Appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.When("I dismiss the popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 9
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 10
+ testRunner.And("the Free Shipping alert Appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.When("I dismiss the popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
  testRunner.Then("the alert should not be present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Search for Paua Shamrock Earrings", SourceLine=10)]
+        [TechTalk.SpecRun.ScenarioAttribute("Search for Paua Shamrock Earrings", SourceLine=13)]
         public virtual void SearchForPauaShamrockEarrings()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for Paua Shamrock Earrings", ((string[])(null)));
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 12
- testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.When("I enter the SKU in the search box and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 15
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.When("I enter the SKU in the search box and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.Then("I should be on the Paua Shamrock product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add Paua Shamrock Earrings to Cart and Confirm Popup Info", SourceLine=16)]
+        [TechTalk.SpecRun.ScenarioAttribute("Add Paua Shamrock Earrings to Cart and Confirm Popup Info", SourceLine=19)]
         public virtual void AddPauaShamrockEarringsToCartAndConfirmPopupInfo()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Paua Shamrock Earrings to Cart and Confirm Popup Info", ((string[])(null)));
-#line 17
-this.ScenarioSetup(scenarioInfo);
-#line 18
- testRunner.Given("I am on the product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("I click the Add to Cart Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 21
+ testRunner.Given("I am on the product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.When("I click the Add to Cart Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
  testRunner.Then("the popup should appear with the correct information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Loa" +
-            "d", SourceLine=22)]
+            "d", SourceLine=25)]
         public virtual void AddPauaShamrockEarringsToCartClickPopupAndConfirmShoppingCartPageLoad()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Loa" +
                     "d", ((string[])(null)));
-#line 23
-this.ScenarioSetup(scenarioInfo);
-#line 24
- testRunner.Given("I am on the product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.When("I click the Add to Cart Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.When("I click the View Cart / Checkout Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I am on the product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.When("I click the Add to Cart Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.When("I click the View Cart / Checkout Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
  testRunner.Then("I should be on the shopping cart page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify information on the Shopping Cart Page", SourceLine=29)]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify information on the Shopping Cart Page", SourceLine=32)]
         public virtual void VerifyInformationOnTheShoppingCartPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify information on the Shopping Cart Page", ((string[])(null)));
-#line 30
+#line 33
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 34
  testRunner.Given("I am on the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
+#line 35
  testRunner.Then("The expected information should be present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Navigate to the Login Page and Verify Checkout as Guest button", SourceLine=33)]
+        [TechTalk.SpecRun.ScenarioAttribute("Navigate to the Login Page and Verify Checkout as Guest button", SourceLine=36)]
         public virtual void NavigateToTheLoginPageAndVerifyCheckoutAsGuestButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to the Login Page and Verify Checkout as Guest button", ((string[])(null)));
-#line 34
-this.ScenarioSetup(scenarioInfo);
-#line 35
- testRunner.Given("I am on the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 36
- testRunner.When("I click on the Checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
+this.ScenarioSetup(scenarioInfo);
+#line 38
+ testRunner.Given("I am on the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 39
+ testRunner.When("I click on the Checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
  testRunner.Then("I should see the Checkout as Guest Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Navigate to CheckoutPage1", SourceLine=38)]
+        [TechTalk.SpecRun.ScenarioAttribute("Navigate to CheckoutPage1", SourceLine=41)]
         public virtual void NavigateToCheckoutPage1()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to CheckoutPage1", ((string[])(null)));
-#line 39
-this.ScenarioSetup(scenarioInfo);
-#line 40
- testRunner.Given("I am on the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
- testRunner.When("I click on the Checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.When("I click on the Checkout as Guest Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 43
+ testRunner.Given("I am on the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+ testRunner.When("I click on the Checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.When("I click on the Checkout as Guest Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
  testRunner.Then("I should be on the first Checkout Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Complete Checkout Page 1 and Submit", SourceLine=44)]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify Summary Information on Checkout Page 1", SourceLine=47)]
+        public virtual void VerifySummaryInformationOnCheckoutPage1()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Summary Information on Checkout Page 1", ((string[])(null)));
+#line 48
+this.ScenarioSetup(scenarioInfo);
+#line 49
+ testRunner.Given("I am on the first Checkout Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 50
+ testRunner.Then("I will confirm the summary information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Complete Checkout Page 1 and Submit", SourceLine=51)]
         public virtual void CompleteCheckoutPage1AndSubmit()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Complete Checkout Page 1 and Submit", ((string[])(null)));
-#line 45
+#line 52
 this.ScenarioSetup(scenarioInfo);
-#line 46
+#line 53
  testRunner.Given("I am on the first Checkout Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
+#line 54
  testRunner.When("I complete the form and confirm order summary information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 55
  testRunner.When("I click the Proceed to Payment and Review Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 56
  testRunner.Then("I should be on the second checkout page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Confrim Order Summary information on Checkout Page2", SourceLine=50)]
+        [TechTalk.SpecRun.ScenarioAttribute("Confrim Order Summary information on Checkout Page2", SourceLine=57)]
         public virtual void ConfrimOrderSummaryInformationOnCheckoutPage2()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confrim Order Summary information on Checkout Page2", ((string[])(null)));
-#line 51
+#line 58
 this.ScenarioSetup(scenarioInfo);
-#line 52
+#line 59
  testRunner.Given("I am on the second checkout page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 53
+#line 60
  testRunner.Then("the correct information should be present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Complete Payment Information and Submit Order", SourceLine=54)]
+        [TechTalk.SpecRun.ScenarioAttribute("Complete Payment Information and Submit Order", SourceLine=61)]
         public virtual void CompletePaymentInformationAndSubmitOrder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Complete Payment Information and Submit Order", ((string[])(null)));
-#line 55
+#line 62
 this.ScenarioSetup(scenarioInfo);
-#line 56
+#line 63
  testRunner.Given("I am on the second checkout page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
+#line 64
  testRunner.When("I fill complete the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 65
  testRunner.When("I click the submit order button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
- testRunner.Then("I should see the google popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+ testRunner.Then("I should be on the receipt page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Dismiss all the Popup windows to get to the receipt page", SourceLine=67)]
+        public virtual void DismissAllThePopupWindowsToGetToTheReceiptPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dismiss all the Popup windows to get to the receipt page", ((string[])(null)));
+#line 68
+this.ScenarioSetup(scenarioInfo);
+#line 69
+ testRunner.Given("I am on the receipt page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 70
+ testRunner.When("I close the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.Then("they should not be present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm information on the Receipt Page", SourceLine=72)]
+        public virtual void ConfirmInformationOnTheReceiptPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm information on the Receipt Page", ((string[])(null)));
+#line 73
+this.ScenarioSetup(scenarioInfo);
+#line 74
+ testRunner.Given("I am on the receipt page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 75
+ testRunner.When("I close the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 76
+ testRunner.Then("I will confirm all the pertinent information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

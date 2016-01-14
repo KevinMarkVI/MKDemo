@@ -18,8 +18,8 @@ namespace UnitTestProject1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SpecFlowFeature1", Description="Tests the entire test case from beginning to end", SourceFile="MKEndToEnd.feature", SourceLine=0)]
-    public partial class SpecFlowFeature1Feature
+    [TechTalk.SpecRun.FeatureAttribute("MK end to end test case", Description="Tests the entire flow from beginning to end", SourceFile="MKEndToEnd.feature", SourceLine=0)]
+    public partial class MKEndToEndTestCaseFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace UnitTestProject1
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature1", "Tests the entire test case from beginning to end", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "MK end to end test case", "Tests the entire flow from beginning to end", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -60,6 +60,42 @@ namespace UnitTestProject1
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("End to End", SourceLine=4)]
+        public virtual void EndToEnd()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End", ((string[])(null)));
+#line 5
+this.ScenarioSetup(scenarioInfo);
+#line 6
+ testRunner.Given("I am on the Miles Kimball website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+ testRunner.And("I dismiss the popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.And("I search for Paua Shamrock Earrings using the SKU", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.And("I click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And("I click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("I click Checkout as Guest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("Complete the various fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("I click Proceed to Payment & Review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("I enter payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("I click Submit Order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("I dismiss the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then("the receipt page should confirm the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]

@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="GuineaPigSteps.cs" />
     <Compile Include="Hooks\Hooks.cs" />
+    <Compile Include="MKEndToEndTestCaseSteps.cs" />
     <Compile Include="MKIndividualTestsSteps.cs" />
     <Compile Include="PageObjects\PageBase.cs" />
     <Compile Include="PageObjects\Pages\MKCheckoutPage1.cs" />
@@ -98,6 +99,7 @@
       <DependentUpon>MKIndividualTests.feature</DependentUpon>
     </Compile>
     <Compile Include="PageObjects\Pages\MKLoginPage.cs" />
+    <Compile Include="PageObjects\Pages\MKOrderConfirmationPage.cs" />
     <Compile Include="PageObjects\Pages\MKProductPage.cs" />
     <Compile Include="PageObjects\Pages\MKShoppingCartPage.cs" />
     <Compile Include="Utils\CustomRemoteWebdriver.cs" />

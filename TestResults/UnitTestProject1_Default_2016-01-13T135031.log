@@ -1,0 +1,27 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#18: Verify Summary Information on Checkout Page 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+End: Test Suite Dump
+Scheduler: considering #18 for thread #0
+Scheduler: using #18 for thread #0
+Test #18 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #18/0 is started on thread #0
+B:Given I am on the first Checkout Page
+T:error: Exception has been thrown by the target of an invocation.
+B:Then I will confirm the summary information
+T:skipped because of previous errors
+Test #18 is finished on thread #0 as Failed within 28.1630846 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

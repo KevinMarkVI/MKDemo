@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#12: Search for Paua Shamrock Earrings - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings
+End: Test Suite Dump
+Scheduler: considering #12 for thread #0
+Scheduler: using #12 for thread #0
+Test #12 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #0
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (8.6s)
+B:And I dismiss the Free Shipping popup
+T:error: Could not find element by: By.Id: mf234
+B:When I enter the SKU in the search box and submit
+T:skipped because of previous errors
+B:Then I should be on the Paua Shamrock product page
+T:skipped because of previous errors
+Test #12 is finished on thread #0 as Failed within 41.6458681 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

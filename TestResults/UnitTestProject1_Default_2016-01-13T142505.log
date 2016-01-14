@@ -1,0 +1,59 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+1 | testpath:TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+2 | testpath:TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+3
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#3: GuineaPig - 
+#4: Verify Title 1 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+1
+#5: Verify Title 2 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+2
+#6: Verify Title 3 - TestAssembly:UnitTestProject1/Feature:GuineaPig/Scenario:Verify+Title+3
+End: Test Suite Dump
+Scheduler: considering #4 for thread #0
+Scheduler: using #4 for thread #0
+Test #4 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #4/0 is started on thread #0
+Scheduler: considering #5 for thread #1
+Scheduler: using #5 for thread #1
+Test #5 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #5/0 is started on thread #1
+Scheduler: considering #6 for thread #2
+Scheduler: using #6 for thread #2
+Test #6 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #6/0 is started on thread #2
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+B:Given I am on the Guinea Pig Website
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (14.7s)
+B:When I check the title
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (16.0s)
+B:When I check the title
+T:done: GuineaPigSteps.GivenIAmOnTheGuineaPigWebsite() (16.9s)
+B:When I check the title
+T:done: GuineaPigSteps.WhenICheckTheTitle() (1.0s)
+B:Then the title should be what I expect
+T:done: GuineaPigSteps.ThenTheTitleShouldBeWhatIExpect() (0.9s)
+Test #5 is finished on thread #1 as Succeeded within 29.2211958 seconds
+Appdomain Disposed
+T:error: Timed out after 10 seconds
+B:Then the title should be what I expect
+T:skipped because of previous errors
+Test #4 is finished on thread #0 as Failed within 35.613477 seconds
+Appdomain Disposed
+T:error: Timed out after 10 seconds
+B:Then the title should be what I expect
+T:skipped because of previous errors
+Test #6 is finished on thread #2 as Failed within 36.8155391 seconds
+Appdomain Disposed
+Total: 3
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 2

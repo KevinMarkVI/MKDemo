@@ -1,0 +1,29 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+windows+to+get+to+the+receipt+page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#8: MK Individual Tests - 
+#19: Dismiss all the Popup windows to get to the receipt page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+windows+to+get+to+the+receipt+page
+End: Test Suite Dump
+Scheduler: considering #19 for thread #0
+Scheduler: using #19 for thread #0
+Test #19 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #19/0 is started on thread #0
+B:Given I am on the receipt page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (116.0s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (8.0s)
+B:Then they should not be present
+T:done: MKIndividualTestsSteps.ThenTheyShouldNotBePresent() (0.5s)
+Test #19 is finished on thread #0 as Succeeded within 147.429308 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

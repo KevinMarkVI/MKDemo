@@ -1,0 +1,49 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+end+to+end+test+case/Scenario:End+to+End
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#7: MK end to end test case - 
+#8: End to End - TestAssembly:UnitTestProject1/Feature:MK+end+to+end+test+case/Scenario:End+to+End
+End: Test Suite Dump
+Scheduler: considering #8 for thread #0
+Scheduler: using #8 for thread #0
+Test #8 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #8/0 is started on thread #0
+B:Given I am on the Miles Kimball website
+T:done: MKEndToEndTestCaseSteps.GivenIAmOnTheMilesKimballWebsite() (36.2s)
+B:And I dismiss the popup
+T:done: MKEndToEndTestCaseSteps.GivenIDismissThePopup() (4.2s)
+B:And I search for Paua Shamrock Earrings using the SKU
+T:done: MKEndToEndTestCaseSteps.GivenISearchForPauaShamrockEarringsUsingTheSKU() (1.8s)
+B:And I click add to cart
+T:done: MKEndToEndTestCaseSteps.GivenIClickAddToCart() (12.9s)
+B:And I click View Cart / Checkout
+T:done: MKEndToEndTestCaseSteps.GivenIClickViewCartCheckout() (1.0s)
+B:And I click Checkout
+T:done: MKEndToEndTestCaseSteps.GivenIClickCheckout() (11.6s)
+B:And I click Checkout as Guest
+T:done: MKEndToEndTestCaseSteps.GivenIClickCheckoutAsGuest() (5.9s)
+B:And Complete the various fields
+T:done: MKEndToEndTestCaseSteps.GivenCompleteTheVariousFields() (14.8s)
+B:And I click Proceed to Payment & Review
+T:done: MKEndToEndTestCaseSteps.GivenIClickProceedToPaymentReview() (2.5s)
+B:And I enter payment information
+T:done: MKEndToEndTestCaseSteps.GivenIEnterPaymentInformation() (10.9s)
+B:And I click Submit Order
+T:done: MKEndToEndTestCaseSteps.GivenIClickSubmitOrder() (3.5s)
+B:And I dismiss the popup windows
+T:done: MKEndToEndTestCaseSteps.GivenIDismissThePopupWindows() (24.4s)
+B:Then the receipt page should confirm the order
+T:done: MKEndToEndTestCaseSteps.ThenTheReceiptPageShouldConfirmTheOrder() (0.1s)
+Test #8 is finished on thread #0 as Succeeded within 144.6413431 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

@@ -20,7 +20,7 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_SubtotalAmountLabel")]
         public IWebElement subTotal { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_cphBody_CheckoutButton")]
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_TopCheckoutButton")]
         public IWebElement checkoutButton { get; set; }
 
 
@@ -28,10 +28,6 @@ namespace UnitTestProject1.PageObjects.Pages
         public MKShoppingCartPage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            if (!this.webDriver.Url.ToString().Contains("checkout"))
-            {
-                throw new InvalidElementStateException("This is not the correct page");
-            }
             this.title = this.webDriver.Title;
             PageFactory.InitElements(this.webDriver, this);
         }

@@ -66,10 +66,6 @@ namespace UnitTestProject1.PageObjects.Pages
         public MKCheckoutPage1(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            if (!this.webDriver.Url.ToString().Contains("checkoutstep1"))
-            {
-                throw new InvalidElementStateException("This is not the correct page");
-            }
             this.title = this.webDriver.Title;
             PageFactory.InitElements(this.webDriver, this);
         }

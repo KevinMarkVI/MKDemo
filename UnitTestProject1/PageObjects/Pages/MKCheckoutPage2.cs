@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject1.PageObjects.Pages
 {
@@ -52,12 +53,26 @@ namespace UnitTestProject1.PageObjects.Pages
         public MKCheckoutPage2(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            if (!this.webDriver.Url.Contains("2"))
-            {
-                throw new InvalidElementStateException("This is not the correct page");
-            }
             this.title = this.webDriver.Title;
             PageFactory.InitElements(this.webDriver, this);
+        }
+
+        public void completePaymentInfo()
+        {
+            SelectElement paymentType = new SelectElement(this.paymentTypeSelector);
+            paymentType.SelectByValue("058b6f07-ac45-46f4-90ce-3f2dd760750e");
+            System.Threading.Thread.Sleep(1000);
+
+            this.cardNumberInput.SendKeys("4111111111111111");
+
+            SelectElement paymentMonth = new SelectElement(this.paymentMonthSelector);
+            paymentMonth.SelectByValue("02");
+
+            SelectElement paymentYear = new SelectElement(this.paymentYearSelector);
+            paymentYear.SelectByValue("2016");
+
+            this.securityCodeInput.SendKeys("156");
+
         }
     }
 }

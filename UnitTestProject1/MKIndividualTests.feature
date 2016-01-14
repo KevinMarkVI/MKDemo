@@ -1,6 +1,9 @@
 ﻿Feature: MK Individual Tests
 	Scenarios designed to test single aspect of the Miles Kimball Website
 
+Scenario: Confirm Alert is present on homepage
+	Given I am on the Miles Kimball website
+	Then the free shipping alert should be present
 
 Scenario: Confirm Alert is Present and Dismiss
 	Given I am on the Miles Kimball homepage
@@ -42,6 +45,10 @@ Scenario: Navigate to CheckoutPage1
 	When I click on the Checkout as Guest Button
 	Then I should be on the first Checkout Page
 
+Scenario: Verify Summary Information on Checkout Page 1
+	Given I am on the first Checkout Page
+	Then I will confirm the summary information
+
 Scenario: Complete Checkout Page 1 and Submit
 	Given I am on the first Checkout Page
 	When I complete the form and confirm order summary information
@@ -56,10 +63,14 @@ Scenario: Complete Payment Information and Submit Order
 	Given I am on the second checkout page
 	When I fill complete the payment information
 	When I click the submit order button
-	Then I should see the google popup
+	Then I should be on the receipt page
 
+Scenario: Dismiss all the Popup windows to get to the receipt page
+	Given I am on the receipt page
+	When I close the popups
+	Then they should not be present
 
-
-
-
-
+Scenario: Confirm information on the Receipt Page
+	Given I am on the receipt page
+	When I close the popups
+	Then I will confirm all the pertinent information

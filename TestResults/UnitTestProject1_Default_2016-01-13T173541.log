@@ -1,0 +1,54 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#13: Add Paua Shamrock Earrings to Cart and Confirm Popup Info - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info
+#14: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+End: Test Suite Dump
+Scheduler: considering #13 for thread #0
+Scheduler: using #13 for thread #0
+Test #13 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #0
+Scheduler: considering #14 for thread #1
+Scheduler: using #14 for thread #1
+Test #14 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #1
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.7s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.5s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (1.8s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (2.1s)
+Test #13 is finished on thread #0 as Succeeded within 33.9235256 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (19.3s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.7s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (2.9s)
+B:When I click the View Cart / Checkout Button
+T:error: Element not found in the cache - perhaps the page has changed since it was looked up
+T:For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+T:Build info: version: '2.48.0', revision: 'b7b081a', time: '2015-10-07 15:48:56'
+T:System info: host: 'itako54162.prod.miso', ip: '172.20.54.162', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_66'
+T:Driver info: driver.version: unknown
+B:Then I should be on the shopping cart page
+T:skipped because of previous errors
+Test #14 is finished on thread #1 as Failed within 66.0649712 seconds
+Appdomain Disposed
+Total: 2
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

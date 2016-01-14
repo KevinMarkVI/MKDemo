@@ -11,7 +11,7 @@ namespace UnitTestProject1.PageObjects.Pages
     class MKHomePage : PageBase
     {
 
-        public static readonly Uri URL = new Uri("http://www.mileskimball.com");
+        public static readonly Uri URL = new Uri("https://www.mileskimball.com");
 
         [FindsBy(How = How.Id, Using = "mf234")]
         public IWebElement closePopup { get; set; }
@@ -27,7 +27,7 @@ namespace UnitTestProject1.PageObjects.Pages
             this.webDriver = webDriver;
             if (!this.webDriver.Url.Contains(URL.ToString()))
             {
-                throw new InvalidElementStateException("This is not the correct page");
+                throw new InvalidElementStateException("This is not the MKHomePage page");
             }
             this.title = this.webDriver.Title;
             PageFactory.InitElements(this.webDriver, this);

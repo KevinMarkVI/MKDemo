@@ -1,0 +1,50 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#13: Add Paua Shamrock Earrings to Cart and Confirm Popup Info - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info
+#14: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+End: Test Suite Dump
+Scheduler: considering #13 for thread #0
+Scheduler: using #13 for thread #0
+Test #13 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #0
+Scheduler: considering #14 for thread #1
+Scheduler: using #14 for thread #1
+Test #14 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #1
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.0s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (18.1s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (2.1s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.8s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (4.5s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (5.5s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.8s)
+Test #13 is finished on thread #0 as Succeeded within 42.942127 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (11.1s)
+B:Then I should be on the shopping cart page
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (0.1s)
+Test #14 is finished on thread #1 as Succeeded within 53.242723 seconds
+Appdomain Disposed
+Total: 2
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
