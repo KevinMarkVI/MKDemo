@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#17: Navigate to CheckoutPage1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+End: Test Suite Dump
+Scheduler: considering #17 for thread #0
+Scheduler: using #17 for thread #0
+Test #17 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #17/0 is started on thread #0
+B:Given I am on the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (31.3s)
+B:When I click on the Checkout button
+T:done: MKIndividualTestsSteps.WhenIClickOnTheCheckoutButton() (4.9s)
+B:When I click on the Checkout as Guest Button
+T:done: MKIndividualTestsSteps.WhenIClickOnTheCheckoutAsGuestButton() (6.9s)
+B:Then I should be on the first Checkout Page
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheFirstCheckoutPage() (0.1s)
+Test #17 is finished on thread #0 as Succeeded within 55.7502873 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

@@ -1,0 +1,35 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#17: Navigate to CheckoutPage1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+End: Test Suite Dump
+Scheduler: considering #17 for thread #0
+Scheduler: using #17 for thread #0
+Test #17 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #17/0 is started on thread #0
+B:Given I am on the Shopping Cart Page
+T:error: Element not found in the cache - perhaps the page has changed since it was looked up
+T:For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+T:Build info: version: '2.48.0', revision: 'b7b081a', time: '2015-10-07 15:48:56'
+T:System info: host: 'itako48154.prod.miso', ip: '172.20.48.154', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_66'
+T:Driver info: driver.version: unknown
+B:When I click on the Checkout button
+T:skipped because of previous errors
+B:When I click on the Checkout as Guest Button
+T:skipped because of previous errors
+B:Then I should be on the first Checkout Page
+T:skipped because of previous errors
+Test #17 is finished on thread #0 as Failed within 59.650991 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

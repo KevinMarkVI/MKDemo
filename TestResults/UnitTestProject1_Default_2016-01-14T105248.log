@@ -1,0 +1,44 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+windows+to+get+to+the+receipt+page | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+information+on+the+Receipt+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#22: Dismiss all the Popup windows to get to the receipt page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+windows+to+get+to+the+receipt+page
+#23: Confirm information on the Receipt Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+information+on+the+Receipt+Page
+End: Test Suite Dump
+Scheduler: considering #22 for thread #0
+Scheduler: using #22 for thread #0
+Test #22 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #22/0 is started on thread #0
+Scheduler: considering #23 for thread #1
+Scheduler: using #23 for thread #1
+Test #23 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #23/0 is started on thread #1
+B:Given I am on the receipt page
+B:Given I am on the receipt page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (74.5s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.6s)
+B:Then they should not be present
+T:done: MKIndividualTestsSteps.ThenTheyShouldNotBePresent() (0.4s)
+Test #22 is finished on thread #0 as Succeeded within 95.5382995 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (94.8s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.2s)
+B:Then I will confirm all the pertinent information
+T:done: MKIndividualTestsSteps.ThenConfirmAllPertinentInformation() (1.0s)
+Test #23 is finished on thread #1 as Succeeded within 121.1710578 seconds
+Appdomain Disposed
+Total: 2
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

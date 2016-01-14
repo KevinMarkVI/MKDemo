@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Payment+Information+and+Submit+Order
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#9: MK Individual Tests - 
+#21: Complete Payment Information and Submit Order - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Payment+Information+and+Submit+Order
+End: Test Suite Dump
+Scheduler: considering #21 for thread #0
+Scheduler: using #21 for thread #0
+Test #21 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #21/0 is started on thread #0
+B:Given I am on the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (64.8s)
+B:When I fill complete the payment information
+T:done: MKIndividualTestsSteps.WhenIFillCompleteThePaymentInformation() (5.4s)
+B:When I click the submit order button
+T:done: MKIndividualTestsSteps.WhenIClickTheSubmitOrderButton() (18.4s)
+B:Then I should be on the receipt page
+T:done: MKIndividualTestsSteps.ThenIShouldSeeTheGooglePopup() (0.4s)
+Test #21 is finished on thread #0 as Succeeded within 105.9617681 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

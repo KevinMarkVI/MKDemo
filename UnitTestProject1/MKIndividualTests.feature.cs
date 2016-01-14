@@ -264,10 +264,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Dismiss all the Popup windows to get to the receipt page", SourceLine=67)]
+        [TechTalk.SpecRun.ScenarioAttribute("Dismiss all the Popup Windows to get to the Receipt Page", SourceLine=67)]
         public virtual void DismissAllThePopupWindowsToGetToTheReceiptPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dismiss all the Popup windows to get to the receipt page", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dismiss all the Popup Windows to get to the Receipt Page", ((string[])(null)));
 #line 68
 this.ScenarioSetup(scenarioInfo);
 #line 69
@@ -280,10 +280,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Confirm information on the Receipt Page", SourceLine=72)]
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm Information on the Receipt Page", SourceLine=72)]
         public virtual void ConfirmInformationOnTheReceiptPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm information on the Receipt Page", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm Information on the Receipt Page", ((string[])(null)));
 #line 73
 this.ScenarioSetup(scenarioInfo);
 #line 74

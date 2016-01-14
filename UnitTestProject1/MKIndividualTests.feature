@@ -65,12 +65,12 @@ Scenario: Complete Payment Information and Submit Order
 	When I click the submit order button
 	Then I should be on the receipt page
 
-Scenario: Dismiss all the Popup windows to get to the receipt page
+Scenario: Dismiss all the Popup Windows to get to the Receipt Page
 	Given I am on the receipt page
 	When I close the popups
 	Then they should not be present
 
-Scenario: Confirm information on the Receipt Page
+Scenario: Confirm Information on the Receipt Page
 	Given I am on the receipt page
 	When I close the popups
 	Then I will confirm all the pertinent information

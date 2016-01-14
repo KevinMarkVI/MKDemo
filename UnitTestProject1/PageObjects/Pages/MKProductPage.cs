@@ -34,10 +34,6 @@ namespace UnitTestProject1.PageObjects.Pages
         public MKProductPage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            if (!this.webDriver.Url.Contains(URL.ToString()))
-            {
-                throw new InvalidElementStateException("This is not the correct page");
-            }
             this.title = this.webDriver.Title;
             PageFactory.InitElements(this.webDriver, this);
         }
