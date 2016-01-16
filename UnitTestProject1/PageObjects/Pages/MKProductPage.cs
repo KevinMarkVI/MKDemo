@@ -10,11 +10,13 @@ namespace UnitTestProject1.PageObjects.Pages
 {
     class MKProductPage : PageBase
     {
-
         public static readonly Uri URL = new Uri("https://www.mileskimball.com/buy-paua-shamrock-earrings-340665");
 
         [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_rptDisplayItems_ctl00_btnAddToCart")]
         public IWebElement addToCartButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_btnPersAddToCart")]
+        public IWebElement personalizationAddToCartButton { get; set; }
 
         [FindsBy(How = How.Id, Using = "ctl00_ctl00_AddToCartControl_btnCheckout")]
         public IWebElement popupViewCartCheckoutButton { get; set; }
@@ -30,6 +32,18 @@ namespace UnitTestProject1.PageObjects.Pages
 
         [FindsBy(How = How.Id, Using = "mf234")]
         public IWebElement closePopup { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_lblDisplayItemName")]
+        public IWebElement productDisplayName { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_rptDisplayItems_ctl00_Personalize")]
+        public IWebElement personalizeButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_PersonalizationLines_ctl00_PersonalizationText")]
+        public IWebElement personalizeNameMessageInput { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_ApprovePersonalization")]
+        public IWebElement approvePersonalizationCheckbox { get; set; }
 
         public MKProductPage(IWebDriver webDriver)
         {

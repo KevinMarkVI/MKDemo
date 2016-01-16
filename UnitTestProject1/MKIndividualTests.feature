@@ -2,7 +2,7 @@
 	Scenarios designed to test single aspect of the Miles Kimball Website
 
 Scenario: Confirm Alert is present on homepage
-	Given I am on the Miles Kimball website
+	Given I am on the Miles Kimball homepage
 	Then the free shipping alert should be present
 
 Scenario: Confirm Alert is Present and Dismiss

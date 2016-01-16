@@ -75,12 +75,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GuineaPig.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GuineaPig.feature</DependentUpon>
-    </Compile>
-    <Compile Include="GuineaPigSteps.cs" />
     <Compile Include="Hooks\Hooks.cs" />
     <Compile Include="MKEndToEndTestCaseSteps.cs" />
     <Compile Include="MKIndividualTestsSteps.cs" />
@@ -90,16 +84,17 @@
     <Compile Include="PageObjects\Pages\MKCheckoutPage1.cs" />
     <Compile Include="PageObjects\Pages\MKCheckoutPage2.cs" />
     <Compile Include="PageObjects\Pages\MKHomePage.cs" />
-    <Compile Include="MKEndToEnd.feature.cs">
+    <Compile Include="MKPauaEarringsEndToEnd.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MKEndToEnd.feature</DependentUpon>
+      <DependentUpon>MKPauaEarringsEndToEnd.feature</DependentUpon>
     </Compile>
     <Compile Include="MKIndividualTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MKIndividualTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="PageObjects\Pages\MKKidsPage.cs" />
     <Compile Include="PageObjects\Pages\MKLoginPage.cs" />
     <Compile Include="PageObjects\Pages\MKMyAccountPage.cs" />
     <Compile Include="PageObjects\Pages\MKOrderConfirmationPage.cs" />
@@ -110,6 +105,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MKAccountLoginErrorTesting.feature</DependentUpon>
     </Compile>
+    <Compile Include="MKMusicalPencilsEndToEnd.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MKMusicalPencilsEndToEnd.feature</DependentUpon>
+    </Compile>
+    <Compile Include="MKMusicalPencislEndtoEndSteps.cs" />
     <Compile Include="Utils\CustomRemoteWebdriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,14 +121,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="GuineaPig.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GuineaPig.feature.cs</LastGenOutput>
-    </None>
     <None Include="runtests.cmd" />
-    <None Include="MKEndToEnd.feature">
+    <None Include="MKPauaEarringsEndToEnd.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MKEndToEnd.feature.cs</LastGenOutput>
+      <LastGenOutput>MKPauaEarringsEndToEnd.feature.cs</LastGenOutput>
     </None>
     <None Include="MKIndividualTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -136,6 +133,10 @@
     <None Include="MKAccountLoginErrorTesting.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MKAccountLoginErrorTesting.feature.cs</LastGenOutput>
+    </None>
+    <None Include="MKMusicalPencilsEndToEnd.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MKMusicalPencilsEndToEnd.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>

@@ -25,6 +25,11 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_btnMyAccount")]
         public IWebElement myAccountHeaderButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_rptCategories_ctl05_hplCategory")]
+        public IWebElement kidsNavButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "CatLink3")]
+        public IWebElement subMenuPenPencil { get; set; }
 
         public MKHomePage(IWebDriver webDriver)
         {

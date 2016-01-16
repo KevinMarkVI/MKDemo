@@ -63,6 +63,33 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_OrderTotals_OrderTotal")]
         public IWebElement orderSummaryTotal { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_BAEmailSignUpCheckBox")]
+        public IWebElement specialOffersCheckbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHDifferentAddressRadioButton")]
+        public IWebElement shipToDifferentAddressCheckbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHFirstNameTextBox")]
+        public IWebElement shipToDifferentAddressFirstName { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHLastNameTextBox")]
+        public IWebElement shipToDifferentAddressLastName { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHAddress1TextBox")]
+        public IWebElement shipToDifferentAddressStreetAddress { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHCityTextBox")]
+        public IWebElement shipToDifferentAddressCity { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHStateDDL")]
+        public IWebElement shipToDifferentAddressStateSelector { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_SHZipTextBox")]
+        public IWebElement shipToDifferentAddressZipCode { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_add_ctl00_0")]
+        public IWebElement giftYesRadioButton { get; set; }
+
         public MKCheckoutPage1(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
@@ -82,6 +109,31 @@ namespace UnitTestProject1.PageObjects.Pages
             this.phoneInput.SendKeys("4235551234");
             this.emailInput.SendKeys("testorders@mileskimball.com");
             this.confirmEmailInput.SendKeys("testorders@mileskimball.com");
+        }
+
+        public void taxCompleteForm()
+        {
+            this.firstNameInput.SendKeys("Tax");
+            this.lastNameInput.SendKeys("Automation");
+            this.addressInput.SendKeys("123 Main St");
+            this.cityInput.SendKeys("Cudahy");
+            SelectElement stateOptions = new SelectElement(this.stateSelector);
+            stateOptions.SelectByValue("WI");
+            this.zipCodeInput.SendKeys("53110");
+            this.phoneInput.SendKeys("4145559876");
+            this.emailInput.SendKeys("testorders@mileskimball.com");
+            this.confirmEmailInput.SendKeys("testorders@mileskimball.com");
+        }
+
+        public void completeAdditionalAddress()
+        {
+            this.shipToDifferentAddressFirstName.SendKeys("Different");
+            this.shipToDifferentAddressLastName.SendKeys("Automation");
+            this.shipToDifferentAddressStreetAddress.SendKeys("118 E Bufflehead Dr");
+            this.shipToDifferentAddressCity.SendKeys("Sweetwater");
+            SelectElement addAddressStateOptions = new SelectElement(this.shipToDifferentAddressStateSelector);
+            addAddressStateOptions.SelectByValue("TN");
+            this.shipToDifferentAddressZipCode.SendKeys("37874");
         }
 
     }

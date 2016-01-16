@@ -2,7 +2,7 @@
 	Tests the entire flow from beginning to end
 
 
-Scenario: End to End
+Scenario: Paua Shamrock Earrings End to End
 	Given I am on the Miles Kimball website
 	And I dismiss the popup
 	And I search for Paua Shamrock Earrings using the SKU

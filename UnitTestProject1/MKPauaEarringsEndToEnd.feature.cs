@@ -18,13 +18,13 @@ namespace UnitTestProject1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("MK end to end test case", Description="Tests the entire flow from beginning to end", SourceFile="MKEndToEnd.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("MK end to end test case", Description="Tests the entire flow from beginning to end", SourceFile="MKPauaEarringsEndToEnd.feature", SourceLine=0)]
     public partial class MKEndToEndTestCaseFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "MKEndToEnd.feature"
+#line 1 "MKPauaEarringsEndToEnd.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
@@ -62,10 +62,10 @@ namespace UnitTestProject1
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("End to End", SourceLine=4)]
-        public virtual void EndToEnd()
+        [TechTalk.SpecRun.ScenarioAttribute("Paua Shamrock Earrings End to End", SourceLine=4)]
+        public virtual void PauaShamrockEarringsEndToEnd()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paua Shamrock Earrings End to End", ((string[])(null)));
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6

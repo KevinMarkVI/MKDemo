@@ -23,7 +23,20 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_TopCheckoutButton")]
         public IWebElement checkoutButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_ulShippingMethodList")]
+        public IWebElement shippingSelector { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_SourceCode1_SourceCodeTextBox")]
+        public IWebElement promoCodeInput { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_SourceCode1_SourceCodeSubmitButton")]
+        public IWebElement promoCodeApplyButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_SourceCode1_SourceCodeAppliedLabel")]
+        public IWebElement promoCodeConfirmation { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_liShippingMethodItem_3")]
+        public IWebElement premiumShippingSelector { get; set; }
 
         public MKShoppingCartPage(IWebDriver webDriver)
         {

@@ -1,0 +1,73 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#25: Purchasing Musical Notes Pencils - 
+#26: End to End Musical Pencils Test Flow - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow
+End: Test Suite Dump
+Scheduler: considering #26 for thread #0
+Scheduler: using #26 for thread #0
+Test #26 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #26/0 is started on thread #0
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (14.5s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.9s)
+B:And I click on Kids
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (7.6s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (2.0s)
+B:And I choose All from the Items per page selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (9.8s)
+B:And I click on the personalized musical notes pencils
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (18.0s)
+B:And I click personalize
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (4.0s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (1.9s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.9s)
+B:And I then click add to cart
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (3.2s)
+B:And I then click View Cart / Checkout
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (13.8s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (1.3s)
+B:And I choose premium shipping from the selector
+T:error: Exception has been thrown by the target of an invocation.
+B:And I then click the bottom checkout button
+T:skipped because of previous errors
+B:And I click the Checkout as Guest button
+T:skipped because of previous errors
+B:And I complete the form accordingly
+T:skipped because of previous errors
+B:And I uncheck the Special offers and emails box
+T:skipped because of previous errors
+B:And I check the button to ship to a different address
+T:skipped because of previous errors
+B:And I enter the additional address
+T:skipped because of previous errors
+B:And I click the radio button to designate the item is a gift
+T:skipped because of previous errors
+B:And I click the button to Proceed to payment and review
+T:skipped because of previous errors
+B:And I fill out the payment information
+T:skipped because of previous errors
+B:And I click the button to submit the order
+T:skipped because of previous errors
+B:And I close all of the popup windows
+T:skipped because of previous errors
+B:Then I will be on the order confirmation page
+T:skipped because of previous errors
+Test #26 is finished on thread #0 as Failed within 123.3243684 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
