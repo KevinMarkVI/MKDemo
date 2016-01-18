@@ -1,0 +1,310 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow | testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+1 | testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+2 | testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+3 | testpath:TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+4
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#25: Purchasing Musical Notes Pencils - 
+#26: End to End Musical Pencils Test Flow - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow
+#27: End to End Musical Pencils Test Flow 1 - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+1
+#28: End to End Musical Pencils Test Flow 2 - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+2
+#29: End to End Musical Pencils Test Flow 3 - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+3
+#30: End to End Musical Pencils Test Flow 4 - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow+4
+End: Test Suite Dump
+Scheduler: considering #26 for thread #0
+Scheduler: using #26 for thread #0
+Test #26 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #26/0 is started on thread #0
+Scheduler: considering #27 for thread #1
+Scheduler: using #27 for thread #1
+Test #27 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #27/0 is started on thread #1
+Scheduler: considering #28 for thread #2
+Scheduler: using #28 for thread #2
+Test #28 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #28/0 is started on thread #2
+Scheduler: considering #29 for thread #3
+Scheduler: using #29 for thread #3
+Test #29 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #29/0 is started on thread #3
+Scheduler: considering #30 for thread #4
+Scheduler: using #30 for thread #4
+Test #30 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #30/0 is started on thread #4
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (9.8s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.4s)
+B:And I click on Kids
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (14.0s)
+B:And I dismiss the Free Shipping popup
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (6.9s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.5s)
+B:And I dismiss the Free Shipping popup
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (1.9s)
+B:And I choose All from the Items per page selector
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.6s)
+B:And I click on Kids
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.6s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.6s)
+B:And I click on Kids
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (16.4s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.6s)
+B:And I click on Kids
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (5.5s)
+B:And I click on the personalized musical notes pencils
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (10.4s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (8.8s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (1.8s)
+B:And I choose All from the Items per page selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (1.7s)
+B:And I choose All from the Items per page selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (10.4s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (2.4s)
+B:And I choose All from the Items per page selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (12.5s)
+B:And I click personalize
+T:error: Could not find element by: By.Id: mf234
+B:And I click on Kids
+T:skipped because of previous errors
+B:And I click on Pencils and Pencil Cases
+T:skipped because of previous errors
+B:And I choose All from the Items per page selector
+T:skipped because of previous errors
+B:And I click on the personalized musical notes pencils
+T:skipped because of previous errors
+B:And I click personalize
+T:skipped because of previous errors
+B:And I enter Mr. Rodgers neighborhood in the input
+T:skipped because of previous errors
+B:And I click the personalization approval
+T:skipped because of previous errors
+B:And I then click add to cart
+T:skipped because of previous errors
+B:And I then click View Cart / Checkout
+T:skipped because of previous errors
+B:And I enter the promotional code and apply
+T:skipped because of previous errors
+B:And I choose premium shipping from the selector
+T:skipped because of previous errors
+B:And I then click the bottom checkout button
+T:skipped because of previous errors
+B:And I click the Checkout as Guest button
+T:skipped because of previous errors
+B:And I complete the form accordingly
+T:skipped because of previous errors
+B:And I uncheck the Special offers and emails box
+T:skipped because of previous errors
+B:And I check the button to ship to a different address
+T:skipped because of previous errors
+B:And I enter the additional address
+T:skipped because of previous errors
+B:And I click the radio button to designate the item is a gift
+T:skipped because of previous errors
+B:And I click the button to Proceed to payment and review
+T:skipped because of previous errors
+B:And I fill out the payment information
+T:skipped because of previous errors
+B:And I click the button to submit the order
+T:skipped because of previous errors
+B:And I close all of the popup windows
+T:skipped because of previous errors
+B:Then I will be on the order confirmation page
+T:skipped because of previous errors
+Test #27 is finished on thread #1 as Failed within 53.8583938 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (2.1s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (8.3s)
+B:And I click on the personalized musical notes pencils
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (1.6s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (9.8s)
+B:And I click on the personalized musical notes pencils
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.1s)
+B:And I then click add to cart
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (2.9s)
+B:And I then click View Cart / Checkout
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (9.9s)
+B:And I click on the personalized musical notes pencils
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (9.8s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (2.9s)
+B:And I choose premium shipping from the selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (16.0s)
+B:And I click personalize
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (18.4s)
+B:And I click personalize
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChoosePremiumShippingFromTheSelector() (1.1s)
+B:And I then click the bottom checkout button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (2.7s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (2.8s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (1.8s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (1.6s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (0.9s)
+B:And I then click add to cart
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.2s)
+B:And I then click add to cart
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (18.4s)
+B:And I click personalize
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickTheBottomCheckoutButton() (6.5s)
+B:And I click the Checkout as Guest button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (3.2s)
+B:And I then click View Cart / Checkout
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (3.1s)
+B:And I then click View Cart / Checkout
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (3.6s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (2.0s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.6s)
+B:And I then click add to cart
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheCheckoutAsGuestButton() (7.6s)
+B:And I complete the form accordingly
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (3.2s)
+B:And I then click View Cart / Checkout
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (9.1s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (10.8s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenICompleteTheFormAccordingly() (5.7s)
+B:And I uncheck the Special offers and emails box
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (3.3s)
+B:And I choose premium shipping from the selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIUncheckTheSpecialOffersAndEmailsBox() (0.5s)
+B:And I check the button to ship to a different address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICheckTheButtonToShipToADifferentAddress() (0.5s)
+B:And I enter the additional address
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChoosePremiumShippingFromTheSelector() (1.8s)
+B:And I then click the bottom checkout button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (2.9s)
+B:And I choose premium shipping from the selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChoosePremiumShippingFromTheSelector() (1.1s)
+B:And I then click the bottom checkout button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterTheAdditionalAddress() (3.5s)
+B:And I click the radio button to designate the item is a gift
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheRadioButtonToDesignateTheItemIsAGift() (0.5s)
+B:And I click the button to Proceed to payment and review
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (11.9s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickTheBottomCheckoutButton() (6.2s)
+B:And I click the Checkout as Guest button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickTheBottomCheckoutButton() (7.5s)
+B:And I click the Checkout as Guest button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToProceedToPaymentAndReview() (5.6s)
+B:And I fill out the payment information
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (3.5s)
+B:And I choose premium shipping from the selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChoosePremiumShippingFromTheSelector() (1.9s)
+B:And I then click the bottom checkout button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIFillOutThePaymentInformation() (4.8s)
+B:And I click the button to submit the order
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheCheckoutAsGuestButton() (7.8s)
+B:And I complete the form accordingly
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheCheckoutAsGuestButton() (8.1s)
+B:And I complete the form accordingly
+T:done: MKMusicalPencislEndtoEndSteps.GivenICompleteTheFormAccordingly() (4.4s)
+B:And I uncheck the Special offers and emails box
+T:done: MKMusicalPencislEndtoEndSteps.GivenIUncheckTheSpecialOffersAndEmailsBox() (0.4s)
+B:And I check the button to ship to a different address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICheckTheButtonToShipToADifferentAddress() (0.4s)
+B:And I enter the additional address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICompleteTheFormAccordingly() (5.0s)
+B:And I uncheck the Special offers and emails box
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickTheBottomCheckoutButton() (8.6s)
+B:And I click the Checkout as Guest button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIUncheckTheSpecialOffersAndEmailsBox() (0.4s)
+B:And I check the button to ship to a different address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICheckTheButtonToShipToADifferentAddress() (0.5s)
+B:And I enter the additional address
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterTheAdditionalAddress() (3.4s)
+B:And I click the radio button to designate the item is a gift
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheRadioButtonToDesignateTheItemIsAGift() (0.5s)
+B:And I click the button to Proceed to payment and review
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterTheAdditionalAddress() (3.2s)
+B:And I click the radio button to designate the item is a gift
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheRadioButtonToDesignateTheItemIsAGift() (0.8s)
+B:And I click the button to Proceed to payment and review
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToSubmitTheOrder() (14.8s)
+B:And I close all of the popup windows
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheCheckoutAsGuestButton() (8.8s)
+B:And I complete the form accordingly
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToProceedToPaymentAndReview() (6.3s)
+B:And I fill out the payment information
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToProceedToPaymentAndReview() (7.1s)
+B:And I fill out the payment information
+T:done: MKMusicalPencislEndtoEndSteps.GivenICloseAllOfThePopupWindows() (6.9s)
+B:Then I will be on the order confirmation page
+T:done: MKMusicalPencislEndtoEndSteps.ThenIWillBeOnTheOrderConfirmationPage() (0.1s)
+T:done: MKMusicalPencislEndtoEndSteps.GivenICompleteTheFormAccordingly() (5.7s)
+B:And I uncheck the Special offers and emails box
+Test #26 is finished on thread #0 as Succeeded within 132.0379955 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIFillOutThePaymentInformation() (5.0s)
+B:And I click the button to submit the order
+T:done: MKMusicalPencislEndtoEndSteps.GivenIUncheckTheSpecialOffersAndEmailsBox() (0.5s)
+B:And I check the button to ship to a different address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICheckTheButtonToShipToADifferentAddress() (0.6s)
+B:And I enter the additional address
+T:done: MKMusicalPencislEndtoEndSteps.GivenIFillOutThePaymentInformation() (5.1s)
+B:And I click the button to submit the order
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterTheAdditionalAddress() (4.8s)
+B:And I click the radio button to designate the item is a gift
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheRadioButtonToDesignateTheItemIsAGift() (0.5s)
+B:And I click the button to Proceed to payment and review
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToProceedToPaymentAndReview() (7.6s)
+B:And I fill out the payment information
+T:error: Could not find element by: By.Id: gts-g-clx
+B:And I close all of the popup windows
+T:skipped because of previous errors
+B:Then I will be on the order confirmation page
+T:skipped because of previous errors
+T:done: MKMusicalPencislEndtoEndSteps.GivenIFillOutThePaymentInformation() (7.2s)
+B:And I click the button to submit the order
+Test #30 is finished on thread #4 as Failed within 152.7163659 seconds
+Appdomain Disposed
+T:error: Could not find element by: By.Id: gts-g-clx
+B:And I close all of the popup windows
+T:skipped because of previous errors
+B:Then I will be on the order confirmation page
+T:skipped because of previous errors
+Cancelling because configured number of failures reached
+Test #28 is finished on thread #2 as Failed within 155.6372969 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToSubmitTheOrder() (16.5s)
+B:And I close all of the popup windows
+T:done: MKMusicalPencislEndtoEndSteps.GivenICloseAllOfThePopupWindows() (7.3s)
+B:Then I will be on the order confirmation page
+T:done: MKMusicalPencislEndtoEndSteps.ThenIWillBeOnTheOrderConfirmationPage() (0.1s)
+Test #29 is finished on thread #3 as Succeeded within 176.9277251 seconds
+Appdomain Disposed
+Total: 5
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 3

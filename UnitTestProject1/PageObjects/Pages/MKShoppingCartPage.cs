@@ -10,6 +10,7 @@ namespace UnitTestProject1.PageObjects.Pages
 {
     class MKShoppingCartPage : PageBase
     {
+        public static readonly string promoCode = "10520621500";
 
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_MerchTotalAmountLabel")]
         public IWebElement merchandiseTotal { get; set; }
@@ -23,7 +24,7 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_TopCheckoutButton")]
         public IWebElement checkoutButton { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_ulShippingMethodList")]
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_lblShippingMethodName_1")]
         public IWebElement shippingSelector { get; set; }
 
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_SourceCode1_SourceCodeTextBox")]
@@ -37,6 +38,9 @@ namespace UnitTestProject1.PageObjects.Pages
 
         [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_liShippingMethodItem_3")]
         public IWebElement premiumShippingSelector { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_cphBody_ShippingOptions1_DiscountLabel")]
+        public IWebElement merchandiseDiscoutLabel { get; set; }
 
         public MKShoppingCartPage(IWebDriver webDriver)
         {

@@ -109,8 +109,9 @@ namespace UnitTestProject1
         public void GivenIEnterThePromotionalCodeAndApply()
         {
             MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
-            shoppingCartPage.promoCodeInput.SendKeys("10520621500");
+            shoppingCartPage.promoCodeInput.SendKeys(MKShoppingCartPage.promoCode);
             shoppingCartPage.promoCodeApplyButton.Click();
+            System.Threading.Thread.Sleep(2000);
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
         }
         
@@ -119,7 +120,6 @@ namespace UnitTestProject1
         {
             MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
             shoppingCartPage.shippingSelector.Click();
-            System.Threading.Thread.Sleep(5000);
             shoppingCartPage.premiumShippingSelector.Click();
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
 

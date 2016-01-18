@@ -122,6 +122,246 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("End to End Musical Pencils Test Flow 1", SourceLine=31)]
+        public virtual void EndToEndMusicalPencilsTestFlow1()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End Musical Pencils Test Flow 1", ((string[])(null)));
+#line 32
+this.ScenarioSetup(scenarioInfo);
+#line 33
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("I click on Kids", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("I click on Pencils and Pencil Cases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("I choose All from the Items per page selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I click on the personalized musical notes pencils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I click personalize", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I enter Mr. Rodgers neighborhood in the input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I click the personalization approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I then click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I then click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("I enter the promotional code and apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I choose premium shipping from the selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("I then click the bottom checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("I click the Checkout as Guest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I complete the form accordingly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("I uncheck the Special offers and emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("I check the button to ship to a different address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I enter the additional address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I click the radio button to designate the item is a gift", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I click the button to Proceed to payment and review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("I fill out the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("I click the button to submit the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("I close all of the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.Then("I will be on the order confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("End to End Musical Pencils Test Flow 2", SourceLine=58)]
+        public virtual void EndToEndMusicalPencilsTestFlow2()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End Musical Pencils Test Flow 2", ((string[])(null)));
+#line 59
+this.ScenarioSetup(scenarioInfo);
+#line 60
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 61
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I click on Kids", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("I click on Pencils and Pencil Cases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("I choose All from the Items per page selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("I click on the personalized musical notes pencils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I click personalize", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("I enter Mr. Rodgers neighborhood in the input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("I click the personalization approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("I then click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("I then click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("I enter the promotional code and apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("I choose premium shipping from the selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("I then click the bottom checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I click the Checkout as Guest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("I complete the form accordingly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("I uncheck the Special offers and emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("I check the button to ship to a different address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I enter the additional address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And("I click the radio button to designate the item is a gift", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("I click the button to Proceed to payment and review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("I fill out the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("I click the button to submit the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I close all of the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.Then("I will be on the order confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("End to End Musical Pencils Test Flow 3", SourceLine=85)]
+        public virtual void EndToEndMusicalPencilsTestFlow3()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End Musical Pencils Test Flow 3", ((string[])(null)));
+#line 86
+this.ScenarioSetup(scenarioInfo);
+#line 87
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 88
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("I click on Kids", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And("I click on Pencils and Pencil Cases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("I choose All from the Items per page selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("I click on the personalized musical notes pencils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("I click personalize", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And("I enter Mr. Rodgers neighborhood in the input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And("I click the personalization approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And("I then click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("I then click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("I enter the promotional code and apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I choose premium shipping from the selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("I then click the bottom checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("I click the Checkout as Guest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And("I complete the form accordingly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And("I uncheck the Special offers and emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("I check the button to ship to a different address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("I enter the additional address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("I click the radio button to designate the item is a gift", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("I click the button to Proceed to payment and review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("I fill out the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("I click the button to submit the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("I close all of the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.Then("I will be on the order confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("End to End Musical Pencils Test Flow 4", SourceLine=112)]
+        public virtual void EndToEndMusicalPencilsTestFlow4()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End Musical Pencils Test Flow 4", ((string[])(null)));
+#line 113
+this.ScenarioSetup(scenarioInfo);
+#line 114
+ testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 115
+ testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("I click on Kids", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("I click on Pencils and Pencil Cases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And("I choose All from the Items per page selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("I click on the personalized musical notes pencils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("I click personalize", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("I enter Mr. Rodgers neighborhood in the input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("I click the personalization approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.And("I then click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("I then click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("I enter the promotional code and apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("I choose premium shipping from the selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("I then click the bottom checkout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+ testRunner.And("I click the Checkout as Guest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("I complete the form accordingly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("I uncheck the Special offers and emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("I check the button to ship to a different address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("I enter the additional address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("I click the radio button to designate the item is a gift", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("I click the button to Proceed to payment and review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("I fill out the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("I click the button to submit the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("I close all of the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.Then("I will be on the order confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
