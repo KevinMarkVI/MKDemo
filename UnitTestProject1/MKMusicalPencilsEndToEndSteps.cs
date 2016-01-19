@@ -25,17 +25,18 @@ namespace UnitTestProject1
             MKKidsPage kidsPage = new MKKidsPage(driver);
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
-                
+
         [Given]
         public void GivenIClickOnPencilsAndPencilCases()
         {
             MKKidsPage kidsPage = (MKKidsPage)ScenarioContext.Current["kidsPage"];
+            kidsPage.closeFreeShippingPopup();
             //TODO: Hide logic in wait
             IWebElement pencilSubLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.PartialLinkText("pencils")));
             pencilSubLink.Click();
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
-        
+
         [Given]
         public void GivenIChooseAllFromTheItemsPerPageSelector()
         {
@@ -45,7 +46,7 @@ namespace UnitTestProject1
             itemsPerPageSelector.SelectByValue("999999");
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
-        
+
         [Given]
         public void GivenIClickOnThePersonalizedMusicalNotesPencils()
         {
@@ -56,7 +57,7 @@ namespace UnitTestProject1
             Assert.IsTrue(displayName.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
-        
+
         [Given]
         public void GivenIClickPersonalize()
         {
@@ -66,7 +67,7 @@ namespace UnitTestProject1
             Assert.IsTrue(nameMessageInput.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
-        
+
         [Given]
         public void GivenIEnterMrRodgersNeighborhoodInTheInput()
         {
@@ -74,7 +75,7 @@ namespace UnitTestProject1
             productPage.personalizeNameMessageInput.SendKeys("Mr. Rodger's Neighborhood");
             ScenarioContext.Current["productPage"] = productPage;
         }
-        
+
         [Given]
         public void GivenIClickThePersonalizationApproval()
         {
@@ -82,18 +83,19 @@ namespace UnitTestProject1
             productPage.approvePersonalizationCheckbox.Click();
             ScenarioContext.Current["productPage"] = productPage;
         }
-        
+
         [Given]
         public void GivenIThenClickAddToCart()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
-            productPage.personalizationAddToCartButton.Click();
+            IWebElement afterPersonalizationAddToCartButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.personalizationAddToCartButton.GetAttribute("id"))));
+            afterPersonalizationAddToCartButton.Click();
             System.Threading.Thread.Sleep(2000);
             IWebElement popupViewCartCheckoutButtonWait = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
             Assert.IsTrue(popupViewCartCheckoutButtonWait.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
-        
+
         [Given]
         public void GivenIThenClickViewCartCheckout()
         {
@@ -104,7 +106,7 @@ namespace UnitTestProject1
             Assert.IsTrue(shoppingCartCheckoutButtonWait.Displayed);
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
         }
-        
+
         [Given]
         public void GivenIEnterThePromotionalCodeAndApply()
         {
@@ -114,7 +116,7 @@ namespace UnitTestProject1
             System.Threading.Thread.Sleep(2000);
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
         }
-        
+
         [Given]
         public void GivenIChoosePremiumShippingFromTheSelector()
         {
@@ -124,7 +126,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
 
         }
-        
+
         [Given]
         public void GivenIThenClickTheBottomCheckoutButton()
         {
@@ -135,7 +137,7 @@ namespace UnitTestProject1
             Assert.IsTrue(checkoutAsGuestButtonWait.Displayed);
             ScenarioContext.Current["loginPage"] = loginPage;
         }
-        
+
         [Given]
         public void GivenIClickTheCheckoutAsGuestButton()
         {
@@ -147,7 +149,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
 
         }
-        
+
         [Given]
         public void GivenICompleteTheFormAccordingly()
         {
@@ -156,7 +158,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
 
         }
-        
+
         [Given]
         public void GivenIUncheckTheSpecialOffersAndEmailsBox()
         {
@@ -164,7 +166,7 @@ namespace UnitTestProject1
             checkoutPage1.specialOffersCheckbox.Click();
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
-        
+
         [Given]
         public void GivenICheckTheButtonToShipToADifferentAddress()
         {
@@ -172,7 +174,7 @@ namespace UnitTestProject1
             checkoutPage1.shipToDifferentAddressCheckbox.Click();
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
-        
+
         [Given]
         public void GivenIEnterTheAdditionalAddress()
         {
@@ -180,7 +182,7 @@ namespace UnitTestProject1
             checkoutPage1.completeAdditionalAddress();
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
-        
+
         [Given]
         public void GivenIClickTheRadioButtonToDesignateTheItemIsAGift()
         {
@@ -188,7 +190,7 @@ namespace UnitTestProject1
             checkoutPage1.giftYesRadioButton.Click();
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
-        
+
         [Given]
         public void GivenIClickTheButtonToProceedToPaymentAndReview()
         {
@@ -199,7 +201,7 @@ namespace UnitTestProject1
             Assert.IsTrue(checkoutPage2Input.Displayed);
             ScenarioContext.Current["checkoutPage2"] = checkoutPage2;
         }
-        
+
         [Given]
         public void GivenIFillOutThePaymentInformation()
         {
@@ -207,7 +209,7 @@ namespace UnitTestProject1
             checkoutPage2.completePaymentInfo();
             ScenarioContext.Current["checkoutPage2"] = checkoutPage2;
         }
-        
+
         [Given]
         public void GivenIClickTheButtonToSubmitTheOrder()
         {
@@ -218,7 +220,7 @@ namespace UnitTestProject1
             Assert.IsTrue(confirmationPagePopupElement.Displayed);
             ScenarioContext.Current["orderConfirmationPage"] = orderConfirmationPage;
         }
-        
+
         [Given]
         public void GivenICloseAllOfThePopupWindows()
         {
@@ -226,7 +228,7 @@ namespace UnitTestProject1
             orderConfirmationPage.closePopupWindows();
             ScenarioContext.Current["orderConfirmationPage"] = orderConfirmationPage;
         }
-        
+
         [Then]
         public void ThenIWillBeOnTheOrderConfirmationPage()
         {

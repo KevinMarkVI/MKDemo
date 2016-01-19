@@ -76,9 +76,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Hooks\Hooks.cs" />
-    <Compile Include="MKEndToEndTestCaseSteps.cs" />
     <Compile Include="MKIndividualTestsSteps.cs" />
-    <Compile Include="MyAccountLoginErrorTestingSteps.cs" />
+    <Compile Include="MKAccountLoginErrorTestingSteps.cs" />
     <Compile Include="PageObjects\PageBase.cs" />
     <Compile Include="PageObjects\Pages\MKAccountLoginPage.cs" />
     <Compile Include="PageObjects\Pages\MKCheckoutPage1.cs" />
@@ -110,7 +109,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MKMusicalPencilsEndToEnd.feature</DependentUpon>
     </Compile>
-    <Compile Include="MKMusicalPencislEndtoEndSteps.cs" />
+    <Compile Include="MKMusicalPencilsEndToEndSteps.cs" />
     <Compile Include="Utils\CustomRemoteWebdriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace UnitTestProject1
 {
     [Binding]
-    public class MyAccountLoginErrorTestingSteps
+    public class MKAccountLoginErrorTestingSteps
     {
         public static IWebDriver driver = (IWebDriver)ScenarioContext.Current["driver"];
         public WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -33,7 +33,15 @@ namespace UnitTestProject1
             Assert.IsTrue(myAccountLoginPageElement.Displayed);
             ScenarioContext.Current["accountLoginPage"] = accountLoginPage;
         }
-        
+
+        [Given(@"I check for the Free Shipping popup on the account login page")]
+        public void GivenICheckForPopUpHomePage()
+        {
+            MKAccountLoginPage accountLoginPage = (MKAccountLoginPage)ScenarioContext.Current["accountLoginPage"];
+            accountLoginPage.closeFreeShippingPopup();
+            ScenarioContext.Current["accountLoginPage"] = accountLoginPage;
+        }
+
         [When(@"I enter the email address '(.*)' and the password '(.*)'")]
         public void WhenIEnterTheEmailAddressAndThePassword(string email, string password)
         {

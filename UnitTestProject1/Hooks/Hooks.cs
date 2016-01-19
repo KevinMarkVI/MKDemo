@@ -18,8 +18,8 @@ namespace UnitTestProject1.Hooks
         public void BeforeScenario()
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(CapabilityType.BrowserName, "firefox");
-            capabilities.SetCapability(CapabilityType.Version, "43.0");
+            capabilities.SetCapability(CapabilityType.BrowserName, "chrome");
+            capabilities.SetCapability(CapabilityType.Version, "47.0");
             capabilities.SetCapability(CapabilityType.Platform, "OS X 10.10");
             capabilities.SetCapability("username", Environment.GetEnvironmentVariable("SAUCE_USERNAME"));
             capabilities.SetCapability("accessKey", Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY"));

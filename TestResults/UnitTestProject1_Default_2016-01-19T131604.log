@@ -1,0 +1,99 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+1 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+2 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+3 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+4
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#9: Add Paua Shamrock Earrings to Cart and Confirm Popup Info - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info
+#10: Add Paua Shamrock Earrings to Cart and Confirm Popup Info 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+1
+#11: Add Paua Shamrock Earrings to Cart and Confirm Popup Info 2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+2
+#12: Add Paua Shamrock Earrings to Cart and Confirm Popup Info 3 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+3
+#13: Add Paua Shamrock Earrings to Cart and Confirm Popup Info 4 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info+4
+End: Test Suite Dump
+Scheduler: considering #9 for thread #0
+Scheduler: using #9 for thread #0
+Test #9 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #9/0 is started on thread #0
+Scheduler: considering #10 for thread #1
+Scheduler: using #10 for thread #1
+Test #10 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #10/0 is started on thread #1
+Scheduler: considering #11 for thread #2
+Scheduler: using #11 for thread #2
+Test #11 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #2
+Scheduler: considering #12 for thread #3
+Scheduler: using #12 for thread #3
+Test #12 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #3
+Scheduler: considering #13 for thread #4
+Scheduler: using #13 for thread #4
+Test #13 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #4
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.6s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.8s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.7s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.0s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.8s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.7s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.8s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.2s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.5s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.5s)
+B:When I click the Add to Cart Button
+Test #13 is finished on thread #4 as Succeeded within 28.8267762 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.0s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)
+Test #11 is finished on thread #2 as Succeeded within 31.2364769 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.5s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.6s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.3s)
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)
+Test #9 is finished on thread #0 as Succeeded within 33.1884351 seconds
+Appdomain Disposed
+Test #10 is finished on thread #1 as Succeeded within 33.2551573 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (20.3s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.1s)
+B:Then the popup should appear with the correct information
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)
+Test #12 is finished on thread #3 as Succeeded within 48.2032303 seconds
+Appdomain Disposed
+Total: 5
+Succeeded: 5
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

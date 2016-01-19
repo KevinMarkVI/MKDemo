@@ -40,14 +40,7 @@ namespace UnitTestProject1
             Assert.IsTrue(popUp.Displayed);
             ScenarioContext.Current["homePage"] = homePage;
         }
-
-        [When(@"I dismiss the popup")]
-        public void WhenIDismissThePopup()
-        {
-            MKHomePage homePage = (MKHomePage)ScenarioContext.Current["homePage"];
-            homePage.closePopup.Click();
-        }
-
+        
         [Then(@"the alert should not be present")]
         public void ThenTheAlertShouldNotBePresent()
         {
@@ -62,6 +55,24 @@ namespace UnitTestProject1
             MKHomePage homePage = new MKHomePage(driver);
             IWebElement popUp = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(homePage.closePopup.GetAttribute("id"))));
             popUp.Click();
+            ScenarioContext.Current["homePage"] = homePage;
+        }
+
+        [Given(@"I check for the Free Shipping popup")]
+        public void GivenICheckForPopUp()
+        {
+            MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
+            productPage.closeFreeShippingPopup();
+            IWebElement productDisplayName = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.productDisplayName.GetAttribute("id"))));
+            Assert.IsTrue(productDisplayName.Displayed);
+            ScenarioContext.Current["productPage"] = productPage;
+        }
+
+        [Given(@"I check for the Free Shipping popup on the home page")]
+        public void GivenICheckForPopUpHomePage()
+        {
+            MKHomePage homePage = (MKHomePage)ScenarioContext.Current["homePage"];
+            homePage.closeFreeShippingPopup();
             ScenarioContext.Current["homePage"] = homePage;
         }
 
@@ -130,12 +141,10 @@ namespace UnitTestProject1
             Assert.IsTrue(shoppingCartPage.checkoutButton.Displayed);
         }
 
-        [Given(@"I am on the Shopping Cart Page")]
+        [Given(@"I continue to the Shopping Cart Page")]
         public void GivenIAmOnTheShoppingCartPage()
         {
-            driver.Navigate().GoToUrl(MKProductPage.URL);
-            MKProductPage productPage = new MKProductPage(driver);
-            productPage.closePopup.Click();
+            MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
             IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
             productPageAddToCart.Click();
             System.Threading.Thread.Sleep(2000);
@@ -192,18 +201,10 @@ namespace UnitTestProject1
             Assert.IsTrue(checkoutPage1.firstNameInput.Displayed);
         }
 
-        [Given(@"I am on the first Checkout Page")]
+        [Given(@"I continue on to the first Checkout Page")]
         public void GivenIAmOnTheFirstCheckoutPage()
         {
-            driver.Navigate().GoToUrl(MKProductPage.URL);
-            MKProductPage productPage = new MKProductPage(driver);
-            productPage.closePopup.Click();
-            IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            productPageAddToCart.Click();
-            System.Threading.Thread.Sleep(2000);
-            IWebElement popupViewCartProductButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
-            popupViewCartProductButton.Click();
-            MKShoppingCartPage shoppingCartPage = new MKShoppingCartPage(driver);
+            MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
             IWebElement shoppingCartCheckoutButton = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(shoppingCartPage.checkoutButton.GetAttribute("id"))));
             shoppingCartCheckoutButton.Click();
             MKLoginPage loginPage = new MKLoginPage(driver);
@@ -254,24 +255,10 @@ namespace UnitTestProject1
             Assert.IsTrue(checkoutPage2.submitOrderButton.Displayed);
         }
 
-        [Given(@"I am on the second checkout page")]
+        [Given(@"I continue on to the second checkout page")]
         public void GivenIAmOnTheSecondCheckoutPage()
         {
-            driver.Navigate().GoToUrl(MKProductPage.URL);
-            MKProductPage productPage = new MKProductPage(driver);
-            productPage.closePopup.Click();
-            IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            productPageAddToCart.Click();
-            System.Threading.Thread.Sleep(2000);
-            IWebElement popupViewCartProductButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
-            popupViewCartProductButton.Click();
-            MKShoppingCartPage shoppingCartPage = new MKShoppingCartPage(driver);
-            IWebElement shoppingCartCheckoutButton = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(shoppingCartPage.checkoutButton.GetAttribute("id"))));
-            shoppingCartCheckoutButton.Click();
-            MKLoginPage loginPage = new MKLoginPage(driver);
-            IWebElement loginPageCheckoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(loginPage.checkoutAsGuestButton.GetAttribute("id"))));
-            loginPageCheckoutButton.Click();
-            MKCheckoutPage1 checkoutPage1 = new MKCheckoutPage1(driver);
+            MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
             IWebElement checkoutPage1Input = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(checkoutPage1.lastNameInput.GetAttribute("id"))));
             Assert.IsTrue(checkoutPage1Input.Displayed);
             checkoutPage1.completeForm();
@@ -314,38 +301,17 @@ namespace UnitTestProject1
             ScenarioContext.Current["orderConfirmationPage"] = orderConfirmationPage;
         }
 
-        [Then(@"I should be on the receipt page")]
+        [Then(@"I should be on the Order Confirmation page")]
         public void ThenIShouldSeeTheGooglePopup()
         {
             MKOrderConfirmationPage orderConfirmationPage = (MKOrderConfirmationPage)ScenarioContext.Current["orderConfirmationPage"];
             Assert.IsTrue(orderConfirmationPage.googlePopupWindow.Displayed);
         }
 
-        [Given(@"I am on the receipt page")]
+        [Given(@"I continue on to the Order Confirmation page")]
         public void GivenIAmOnTheReceiptPage()
         {
-            driver.Navigate().GoToUrl(MKProductPage.URL);
-            MKProductPage productPage = new MKProductPage(driver);
-            productPage.closePopup.Click();
-            IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            productPageAddToCart.Click();
-            System.Threading.Thread.Sleep(2000);
-            IWebElement popupViewCartProductButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
-            popupViewCartProductButton.Click();
-            MKShoppingCartPage shoppingCartPage = new MKShoppingCartPage(driver);
-            IWebElement shoppingCartCheckoutButton = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(shoppingCartPage.checkoutButton.GetAttribute("id"))));
-            shoppingCartCheckoutButton.Click();
-            MKLoginPage loginPage = new MKLoginPage(driver);
-            IWebElement loginPageCheckoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(loginPage.checkoutAsGuestButton.GetAttribute("id"))));
-            loginPageCheckoutButton.Click();
-            MKCheckoutPage1 checkoutPage1 = new MKCheckoutPage1(driver);
-            IWebElement checkoutPage1Input = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(checkoutPage1.lastNameInput.GetAttribute("id"))));
-            Assert.IsTrue(checkoutPage1Input.Displayed);
-            checkoutPage1.completeForm();
-            checkoutPage1.proceedToPaymentAndReviewButton.Click();
-            MKCheckoutPage2 checkoutPage2 = new MKCheckoutPage2(driver);
-            IWebElement checkoutPage2Button = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(checkoutPage2.submitOrderButton.GetAttribute("id"))));
-            Assert.IsTrue(checkoutPage2Button.Displayed);
+            MKCheckoutPage2 checkoutPage2 = (MKCheckoutPage2)ScenarioContext.Current["checkoutPage2"];
             checkoutPage2.completePaymentInfo();
             checkoutPage2.submitOrderButton.Click();
             MKOrderConfirmationPage orderConfirmationPage = new MKOrderConfirmationPage(driver);
@@ -382,6 +348,13 @@ namespace UnitTestProject1
             Assert.AreEqual(orderConfirmationPage.confirmationProcessingFee.Text, "$1.99");
             Assert.AreEqual(orderConfirmationPage.confirmationShippingTotal.Text, "$3.99");
             Assert.AreEqual(orderConfirmationPage.confirmationTaxTotal.Text, "$0.00");
+            Assert.AreEqual(orderConfirmationPage.confirmationOrderTotal.Text, "$12.97");
+        }
+
+        [Then(@"I will have completed the purchase")]
+        public void ThenWillHaveCompletedThePurchase()
+        {
+            MKOrderConfirmationPage orderConfirmationPage = (MKOrderConfirmationPage)ScenarioContext.Current["orderConfirmationPage"];
             Assert.AreEqual(orderConfirmationPage.confirmationOrderTotal.Text, "$12.97");
         }
     }

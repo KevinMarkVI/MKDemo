@@ -69,31 +69,21 @@ namespace UnitTestProject1
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("I am on the Miles Kimball website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am on the product page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("I dismiss the popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I check for the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.And("I search for Paua Shamrock Earrings using the SKU", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I continue to the Shopping Cart Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I click add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I continue on to the first Checkout Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I click View Cart / Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I continue on to the second checkout page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I continue on to the Order Confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I click Checkout as Guest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I close the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.And("Complete the various fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("I click Proceed to Payment & Review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.And("I enter payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
- testRunner.And("I click Submit Order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
- testRunner.And("I dismiss the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
- testRunner.Then("the receipt page should confirm the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I will have completed the purchase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

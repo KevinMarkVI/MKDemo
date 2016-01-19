@@ -22,7 +22,7 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_ddlItemsPerPageTop")]
         public IWebElement itemsPerPageSelector { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_rptDisplayItems_ctl06_productThumbnail_hplDisplayItem")]
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_rptDisplayItems_ctl01_productThumbnail_hplDisplayItem")]
         public IWebElement musicalNotePencilsLink { get; set; }
 
 

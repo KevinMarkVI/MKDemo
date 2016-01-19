@@ -1,0 +1,31 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#7: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+End: Test Suite Dump
+Scheduler: considering #7 for thread #0
+Scheduler: using #7 for thread #0
+Test #7 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #7/0 is started on thread #0
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (15.3s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.8s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.4s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (2.0s)
+Test #7 is finished on thread #0 as Succeeded within 33.2609126 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

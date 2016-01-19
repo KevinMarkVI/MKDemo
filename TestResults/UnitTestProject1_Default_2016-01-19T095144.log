@@ -1,0 +1,39 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#18: Dismiss all the Popup Windows to get to the Order Confirmation Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+End: Test Suite Dump
+Scheduler: considering #18 for thread #0
+Scheduler: using #18 for thread #0
+Test #18 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #18/0 is started on thread #0
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (22.1s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (2.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (20.0s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (20.5s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (14.7s)
+B:And I continue on to the Order Confirmation page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (25.3s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.7s)
+B:Then they should not be present
+T:done: MKIndividualTestsSteps.ThenTheyShouldNotBePresent() (0.5s)
+Test #18 is finished on thread #0 as Succeeded within 131.8060328 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

@@ -42,7 +42,7 @@ namespace UnitTestProject1.PageObjects.Pages
         [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_PersonalizationLines_ctl00_PersonalizationText")]
         public IWebElement personalizeNameMessageInput { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_ApprovePersonalization")]
+        [FindsBy(How = How.Id, Using = "ctl00_ctl00_cphBody_cpInternalMaster_PersonalizationProducts_ctl00_PersonalizationSections_ctl00_ApprovePersonalizationLabel")]
         public IWebElement approvePersonalizationCheckbox { get; set; }
 
         public MKProductPage(IWebDriver webDriver)

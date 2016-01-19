@@ -1,0 +1,35 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confrim+Order+Summary+information+on+Checkout+Page2
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#16: Confrim Order Summary information on Checkout Page2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confrim+Order+Summary+information+on+Checkout+Page2
+End: Test Suite Dump
+Scheduler: considering #16 for thread #0
+Scheduler: using #16 for thread #0
+Test #16 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #16/0 is started on thread #0
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.5s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.9s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (16.1s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (17.3s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (13.9s)
+B:Then the correct information should be present
+T:done: MKIndividualTestsSteps.ThenTheCorrectInformationShouldBePresent() (1.0s)
+Test #16 is finished on thread #0 as Succeeded within 80.5553879 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0

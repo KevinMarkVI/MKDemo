@@ -71,7 +71,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
  testRunner.Given("I am on the Miles Kimball homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I check for the Free Shipping popup on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
  testRunner.When("I Click on the My Account Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
@@ -89,7 +89,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.Given("I am on the MK Account Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I check for the Free Shipping popup on the account login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.When("I enter the email address \'SSBtestautomation@gmail\' and the password \'SSBtest10\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
@@ -107,7 +107,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Given("I am on the MK Account Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I check for the Free Shipping popup on the account login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.When("I enter the email address \'SSBtestautomation@gmail.com\' and the password \'SSBtest" +
                     "10\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -126,7 +126,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.Given("I am on the MK Account Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
- testRunner.And("I dismiss the Free Shipping popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I check for the Free Shipping popup on the account login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.When("I enter the email address \'SSBtestautomation@gmail.com\' and the password \'SSBtest" +
                     "100\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

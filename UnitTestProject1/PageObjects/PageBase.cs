@@ -11,6 +11,21 @@ namespace UnitTestProject1.PageObjects
     {
         protected IWebDriver webDriver;
 
+        public string freeShippingPopUpId = "mf234";
+
         public string title { get; protected set; }
+
+        public void closeFreeShippingPopup()
+        {
+            try
+            {
+                webDriver.FindElement(By.Id(this.freeShippingPopUpId)).Click();
+            }
+            catch (NoSuchElementException)
+            {
+            }
+        }
     }
+
+    
 }

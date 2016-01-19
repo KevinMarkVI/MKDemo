@@ -3,16 +3,11 @@
 
 
 Scenario: Paua Shamrock Earrings End to End
-	Given I am on the Miles Kimball website
-	And I dismiss the popup
-	And I search for Paua Shamrock Earrings using the SKU
-	And I click add to cart
-	And I click View Cart / Checkout
-	And I click Checkout
-	And I click Checkout as Guest
-	And Complete the various fields
-	And I click Proceed to Payment & Review
-	And I enter payment information
-	And I click Submit Order
-	And I dismiss the popup windows
-	Then the receipt page should confirm the order
+	Given I am on the product page
+	And I check for the Free Shipping popup
+	And I continue to the Shopping Cart Page
+	And I continue on to the first Checkout Page
+	And I continue on to the second checkout page
+	And I continue on to the Order Confirmation page
+	When I close the popups
+	Then I will have completed the purchase

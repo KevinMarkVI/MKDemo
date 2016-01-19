@@ -1,0 +1,33 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#14: Verify Summary Information on Checkout Page 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+End: Test Suite Dump
+Scheduler: considering #14 for thread #0
+Scheduler: using #14 for thread #0
+Test #14 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #0
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (20.3s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.8s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (18.1s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (18.1s)
+B:Then I will confirm the summary information
+T:done: MKIndividualTestsSteps.ThenIWillConfirmSummaryInformation() (0.5s)
+Test #14 is finished on thread #0 as Succeeded within 78.4670166 seconds
+Appdomain Disposed
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
