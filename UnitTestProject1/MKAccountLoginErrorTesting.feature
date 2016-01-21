@@ -1,5 +1,5 @@
 ﻿Feature: My Account Login Error Testing
-	Verify the behavior of Accout Login Flow
+	Verify the behavior of Account Login Flow
 
 Scenario: Navigate to the My Account Page
 	Given I am on the Miles Kimball homepage

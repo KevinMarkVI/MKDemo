@@ -16,7 +16,7 @@ namespace UnitTestProject1
         public static IWebDriver driver = (IWebDriver)ScenarioContext.Current["driver"];
         public WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
 
-        [Given]
+        [Given(@"I click on Kids")]
         public void GivenIClickOnKids()
         {
             MKHomePage homePage = (MKHomePage)ScenarioContext.Current["homePage"];
@@ -26,7 +26,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
 
-        [Given]
+        [Given(@"I click on Pencils and Pencil Cases")]
         public void GivenIClickOnPencilsAndPencilCases()
         {
             MKKidsPage kidsPage = (MKKidsPage)ScenarioContext.Current["kidsPage"];
@@ -37,7 +37,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
 
-        [Given]
+        [Given(@"I choose All from the Items per page selector")]
         public void GivenIChooseAllFromTheItemsPerPageSelector()
         {
             MKKidsPage kidsPage = (MKKidsPage)ScenarioContext.Current["kidsPage"];
@@ -47,7 +47,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["kidsPage"] = kidsPage;
         }
 
-        [Given]
+        [Given(@"I click on the personalized musical notes pencils")]
         public void GivenIClickOnThePersonalizedMusicalNotesPencils()
         {
             MKKidsPage kidsPage = (MKKidsPage)ScenarioContext.Current["kidsPage"];
@@ -58,7 +58,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["productPage"] = productPage;
         }
 
-        [Given]
+        [Given(@"I click personalize")]
         public void GivenIClickPersonalize()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
@@ -68,7 +68,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["productPage"] = productPage;
         }
 
-        [Given]
+        [Given(@"I enter Mr. Rodgers neighborhood in the input")]
         public void GivenIEnterMrRodgersNeighborhoodInTheInput()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
@@ -76,7 +76,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["productPage"] = productPage;
         }
 
-        [Given]
+        [Given(@"I click the personalization approval")]
         public void GivenIClickThePersonalizationApproval()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
@@ -84,7 +84,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["productPage"] = productPage;
         }
 
-        [Given]
+        [Given(@"I then click add to cart")]
         public void GivenIThenClickAddToCart()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
@@ -96,7 +96,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["productPage"] = productPage;
         }
 
-        [Given]
+        [Given(@"I then click View Cart / Checkout")]
         public void GivenIThenClickViewCartCheckout()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
@@ -107,17 +107,18 @@ namespace UnitTestProject1
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
         }
 
-        [Given]
+        [Given(@"I enter the promotional code and apply")]
         public void GivenIEnterThePromotionalCodeAndApply()
         {
             MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
+            shoppingCartPage.promoCodeInput.Clear();
             shoppingCartPage.promoCodeInput.SendKeys(MKShoppingCartPage.promoCode);
             shoppingCartPage.promoCodeApplyButton.Click();
             System.Threading.Thread.Sleep(2000);
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
         }
 
-        [Given]
+        [Given(@"I choose premium shipping from the selector")]
         public void GivenIChoosePremiumShippingFromTheSelector()
         {
             MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
@@ -127,7 +128,7 @@ namespace UnitTestProject1
 
         }
 
-        [Given]
+        [Given(@"I then click the bottom checkout button")]
         public void GivenIThenClickTheBottomCheckoutButton()
         {
             MKShoppingCartPage shoppingCartPage = (MKShoppingCartPage)ScenarioContext.Current["shoppingCartPage"];
@@ -138,7 +139,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["loginPage"] = loginPage;
         }
 
-        [Given]
+        [Given(@"I click the Checkout as Guest button")]
         public void GivenIClickTheCheckoutAsGuestButton()
         {
             MKLoginPage loginPage = (MKLoginPage)ScenarioContext.Current["loginPage"];
@@ -150,7 +151,7 @@ namespace UnitTestProject1
 
         }
 
-        [Given]
+        [Given(@"I complete the form accordingly")]
         public void GivenICompleteTheFormAccordingly()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -159,7 +160,7 @@ namespace UnitTestProject1
 
         }
 
-        [Given]
+        [Given(@"I uncheck the Special Offers and Emails box")]
         public void GivenIUncheckTheSpecialOffersAndEmailsBox()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -167,7 +168,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
 
-        [Given]
+        [Given(@"I check the button to ship to a different address")]
         public void GivenICheckTheButtonToShipToADifferentAddress()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -175,7 +176,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
 
-        [Given]
+        [Given(@"I enter the additional address")]
         public void GivenIEnterTheAdditionalAddress()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -183,7 +184,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
 
-        [Given]
+        [Given(@"I click the radio button to designate the item is a gift")]
         public void GivenIClickTheRadioButtonToDesignateTheItemIsAGift()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -191,7 +192,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage1"] = checkoutPage1;
         }
 
-        [Given]
+        [Given(@"I click the button to Proceed to Payment and Review")]
         public void GivenIClickTheButtonToProceedToPaymentAndReview()
         {
             MKCheckoutPage1 checkoutPage1 = (MKCheckoutPage1)ScenarioContext.Current["checkoutPage1"];
@@ -202,7 +203,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage2"] = checkoutPage2;
         }
 
-        [Given]
+        [Given(@"I fill out the payment information")]
         public void GivenIFillOutThePaymentInformation()
         {
             MKCheckoutPage2 checkoutPage2 = (MKCheckoutPage2)ScenarioContext.Current["checkoutPage2"];
@@ -210,7 +211,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["checkoutPage2"] = checkoutPage2;
         }
 
-        [Given]
+        [Given(@"I click the button to submit the order")]
         public void GivenIClickTheButtonToSubmitTheOrder()
         {
             MKCheckoutPage2 checkoutPage2 = (MKCheckoutPage2)ScenarioContext.Current["checkoutPage2"];
@@ -221,7 +222,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["orderConfirmationPage"] = orderConfirmationPage;
         }
 
-        [Given]
+        [Given(@"I close all of the popup windows")]
         public void GivenICloseAllOfThePopupWindows()
         {
             MKOrderConfirmationPage orderConfirmationPage = (MKOrderConfirmationPage)ScenarioContext.Current["orderConfirmationPage"];
@@ -229,7 +230,7 @@ namespace UnitTestProject1
             ScenarioContext.Current["orderConfirmationPage"] = orderConfirmationPage;
         }
 
-        [Then]
+        [Then(@"I will be on the Order Confirmation Page")]
         public void ThenIWillBeOnTheOrderConfirmationPage()
         {
             MKOrderConfirmationPage orderConfirmationPage = (MKOrderConfirmationPage)ScenarioContext.Current["orderConfirmationPage"];

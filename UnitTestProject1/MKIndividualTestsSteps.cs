@@ -13,7 +13,7 @@ namespace UnitTestProject1
     public class MKIndividualTestsSteps
     {
         public static IWebDriver driver = (IWebDriver)ScenarioContext.Current["driver"];
-        public WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        public WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
 
         [Given(@"I am on the Miles Kimball homepage")]
         public void GivenIAmOnTheMilesKimballHomepage()
@@ -63,8 +63,6 @@ namespace UnitTestProject1
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
             productPage.closeFreeShippingPopup();
-            IWebElement productDisplayName = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.productDisplayName.GetAttribute("id"))));
-            Assert.IsTrue(productDisplayName.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
 
@@ -98,6 +96,8 @@ namespace UnitTestProject1
         {
             driver.Navigate().GoToUrl(MKProductPage.URL);
             MKProductPage productPage = new MKProductPage(driver);
+            IWebElement addToCartButton = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(productPage.addToCartButton.GetAttribute("id"))));
+            Assert.IsTrue(addToCartButton.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
 

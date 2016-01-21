@@ -18,14 +18,14 @@ Scenario: End to End Musical Pencils Test Flow
 	And I then click the bottom checkout button
 	And I click the Checkout as Guest button
 	And I complete the form accordingly
-	And I uncheck the Special offers and emails box
+	And I uncheck the Special Offers and Emails box
 	And I check the button to ship to a different address
 	And I enter the additional address
 	And I click the radio button to designate the item is a gift
-	And I click the button to Proceed to payment and review
+	And I click the button to Proceed to Payment and Review
 	And I fill out the payment information
 	And I click the button to submit the order
 	And I close all of the popup windows 
-	Then I will be on the order confirmation page
+	Then I will be on the Order Confirmation Page
 
 

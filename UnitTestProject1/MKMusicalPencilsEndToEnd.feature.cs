@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 20
  testRunner.And("I complete the form accordingly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("I uncheck the Special offers and emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I uncheck the Special Offers and Emails box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
  testRunner.And("I check the button to ship to a different address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
@@ -109,7 +109,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.And("I click the radio button to designate the item is a gift", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("I click the button to Proceed to payment and review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click the button to Proceed to Payment and Review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
  testRunner.And("I fill out the payment information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
@@ -117,7 +117,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.And("I close all of the popup windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.Then("I will be on the order confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I will be on the Order Confirmation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

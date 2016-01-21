@@ -18,7 +18,7 @@ namespace UnitTestProject1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("My Account Login Error Testing", Description="Verify the behavior of Accout Login Flow", SourceFile="MKAccountLoginErrorTesting.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("My Account Login Error Testing", Description="Verify the behavior of Account Login Flow", SourceFile="MKAccountLoginErrorTesting.feature", SourceLine=0)]
     public partial class MyAccountLoginErrorTestingFeature
     {
         
@@ -31,7 +31,7 @@ namespace UnitTestProject1
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "My Account Login Error Testing", "Verify the behavior of Accout Login Flow", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "My Account Login Error Testing", "Verify the behavior of Account Login Flow", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

@@ -1,0 +1,75 @@
+﻿VS filter: testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1 | testpath:TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#5: MK Individual Tests - 
+#7: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+#14: Verify Summary Information on Checkout Page 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+#18: Dismiss all the Popup Windows to get to the Order Confirmation Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+End: Test Suite Dump
+Scheduler: considering #7 for thread #0
+Scheduler: using #7 for thread #0
+Test #7 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #7/0 is started on thread #0
+Scheduler: considering #14 for thread #1
+Scheduler: using #14 for thread #1
+Test #14 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #1
+Scheduler: considering #18 for thread #2
+Scheduler: using #18 for thread #2
+Test #18 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #18/0 is started on thread #2
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (7.6s)
+B:And the Free Shipping alert Appears
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.3s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.4s)
+Test #7 is finished on thread #0 as Succeeded within 18.4764779 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.3s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.6s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.6s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.7s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.7s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (13.0s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (14.9s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (15.6s)
+B:Then I will confirm the summary information
+T:done: MKIndividualTestsSteps.ThenIWillConfirmSummaryInformation() (0.8s)
+Test #14 is finished on thread #1 as Succeeded within 56.2292384 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (11.2s)
+B:And I continue on to the Order Confirmation page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (17.1s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (8.2s)
+B:Then they should not be present
+T:done: MKIndividualTestsSteps.ThenTheyShouldNotBePresent() (0.3s)
+Test #18 is finished on thread #2 as Succeeded within 90.8491679 seconds
+Appdomain Disposed
+Total: 3
+Succeeded: 3
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
