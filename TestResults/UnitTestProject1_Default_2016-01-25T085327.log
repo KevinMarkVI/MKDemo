@@ -1,0 +1,448 @@
+﻿Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#3: MK end to end test case - 
+#5: MK Individual Tests - 
+#20: My Account Login Error Testing - 
+#25: Purchasing Musical Notes Pencils - 
+#4: Paua Shamrock Earrings End to End - TestAssembly:UnitTestProject1/Feature:MK+end+to+end+test+case/Scenario:Paua+Shamrock+Earrings+End+to+End
+#6: Confirm Alert is present on homepage - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+present+on+homepage
+#7: Confirm Alert is Present and Dismiss - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Alert+is+Present+and+Dismiss
+#8: Search for Paua Shamrock Earrings - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Search+for+Paua+Shamrock+Earrings
+#9: Add Paua Shamrock Earrings to Cart and Confirm Popup Info - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info
+#10: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+#11: Verify information on the Shopping Cart Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+information+on+the+Shopping+Cart+Page
+#12: Navigate to the Login Page and Verify Checkout as Guest button - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+the+Login+Page+and+Verify+Checkout+as+Guest+button
+#13: Navigate to CheckoutPage1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+#14: Verify Summary Information on Checkout Page 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+#15: Complete Checkout Page 1 and Submit - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Checkout+Page+1+and+Submit
+#16: Confrim Order Summary information on Checkout Page2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confrim+Order+Summary+information+on+Checkout+Page2
+#17: Complete Payment Information and Submit Order - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Payment+Information+and+Submit+Order
+#18: Dismiss all the Popup Windows to get to the Order Confirmation Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+#19: Confirm Information on the Receipt Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Information+on+the+Receipt+Page
+#21: Navigate to the My Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Navigate+to+the+My+Account+Page
+#22: Entering an Invalid Email should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Email+should+Display+an+Error
+#23: Entering an Invalid Password should Display an Error - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:Entering+an+Invalid+Password+should+Display+an+Error
+#24: After Entering a Valid Email and Password I should see the Account Page - TestAssembly:UnitTestProject1/Feature:My+Account+Login+Error+Testing/Scenario:After+Entering+a+Valid+Email+and+Password+I+should+see+the+Account+Page
+#26: End to End Musical Pencils Test Flow - TestAssembly:UnitTestProject1/Feature:Purchasing+Musical+Notes+Pencils/Scenario:End+to+End+Musical+Pencils+Test+Flow
+End: Test Suite Dump
+Scheduler: considering #4 for thread #0
+Scheduler: using #4 for thread #0
+Test #4 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #4/0 is started on thread #0
+Scheduler: considering #6 for thread #1
+Scheduler: using #6 for thread #1
+Test #6 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #6/0 is started on thread #1
+Scheduler: considering #7 for thread #2
+Scheduler: using #7 for thread #2
+Test #7 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #7/0 is started on thread #2
+Scheduler: considering #8 for thread #3
+Scheduler: using #8 for thread #3
+Test #8 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #8/0 is started on thread #3
+Scheduler: considering #9 for thread #4
+Scheduler: using #9 for thread #4
+Test #9 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #9/0 is started on thread #4
+Scheduler: considering #10 for thread #5
+Scheduler: using #10 for thread #5
+Test #10 is scheduled for thread #5
+Thread #5: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #10/0 is started on thread #5
+Scheduler: considering #11 for thread #6
+Scheduler: using #11 for thread #6
+Test #11 is scheduled for thread #6
+Thread #6: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #11/0 is started on thread #6
+Scheduler: considering #12 for thread #7
+Scheduler: using #12 for thread #7
+Test #12 is scheduled for thread #7
+Thread #7: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #7
+Scheduler: considering #13 for thread #8
+Scheduler: using #13 for thread #8
+Test #13 is scheduled for thread #8
+Thread #8: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #13/0 is started on thread #8
+Scheduler: considering #14 for thread #9
+Scheduler: using #14 for thread #9
+Test #14 is scheduled for thread #9
+Thread #9: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #14/0 is started on thread #9
+Scheduler: considering #15 for thread #10
+Scheduler: using #15 for thread #10
+Test #15 is scheduled for thread #10
+Thread #10: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Scheduler: considering #16 for thread #11
+Scheduler: using #16 for thread #11
+Test #16 is scheduled for thread #11
+Thread #11: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #16/0 is started on thread #11
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #10
+Scheduler: considering #17 for thread #12
+Scheduler: using #17 for thread #12
+Test #17 is scheduled for thread #12
+Thread #12: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #17/0 is started on thread #12
+Scheduler: considering #18 for thread #13
+Scheduler: using #18 for thread #13
+Test #18 is scheduled for thread #13
+Thread #13: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #18/0 is started on thread #13
+Scheduler: considering #19 for thread #14
+Scheduler: using #19 for thread #14
+Test #19 is scheduled for thread #14
+Thread #14: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #21 for thread #15
+Scheduler: using #21 for thread #15
+Test #21 is scheduled for thread #15
+Thread #15: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #19/0 is started on thread #14
+Test #21/0 is started on thread #15
+Scheduler: considering #22 for thread #16
+Scheduler: using #22 for thread #16
+Test #22 is scheduled for thread #16
+Thread #16: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #22/0 is started on thread #16
+Scheduler: considering #23 for thread #17
+Scheduler: using #23 for thread #17
+Test #23 is scheduled for thread #17
+Thread #17: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #23/0 is started on thread #17
+Scheduler: considering #24 for thread #18
+Scheduler: using #24 for thread #18
+Test #24 is scheduled for thread #18
+Thread #18: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #24/0 is started on thread #18
+Scheduler: considering #26 for thread #19
+Scheduler: using #26 for thread #19
+Test #26 is scheduled for thread #19
+Thread #19: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #26/0 is started on thread #19
+B:Given I am on the product page
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the product page
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the MK Account Login Page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the MK Account Login Page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the MK Account Login Page
+B:Given I am on the Miles Kimball homepage
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (7.7s)
+B:And I check for the Free Shipping popup on the home page
+T:done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (5.0s)
+B:And I check for the Free Shipping popup on the account login page
+B:Given I am on the Miles Kimball homepage
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (9.2s)
+B:Then the free shipping alert should be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldBePresent() (0.3s)
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (9.1s)
+B:And the Free Shipping alert Appears
+Test #6 is finished on thread #1 as Succeeded within 31.325938 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.4s)
+B:And I dismiss the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIDismissThePopup() (0.7s)
+B:Then the alert should not be present
+T:done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.4s)
+Test #7 is finished on thread #2 as Succeeded within 32.8219812 seconds
+Appdomain Disposed
+T:done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (9.8s)
+B:And I check for the Free Shipping popup on the account login page
+T:done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (9.5s)
+B:And I check for the Free Shipping popup on the account login page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (8.8s)
+B:And I check for the Free Shipping popup on the home page
+T:done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (0.7s)
+B:When I enter the email address 'SSBtestautomation@gmail' and the password 'SSBtest10'
+T:done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (1.0s)
+B:When I Click on the My Account Link
+T:done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (1.3s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest100'
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.4s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.5s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.7s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.0s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.8s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.5s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (18.1s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.1s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.4s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.1s)
+B:When I click the View Cart / Checkout Button
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.3s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.7s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.4s)
+B:And I check for the Free Shipping popup
+T:done: MKAccountLoginErrorTestingSteps.WhenIClickOnTheMyAccountLink() (5.4s)
+B:Then I should be on the Account Login Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.4s)
+B:And I continue to the Shopping Cart Page
+T:done: MKAccountLoginErrorTestingSteps.ThenIShouldBeOnTheAccountPage() (0.1s)
+T:done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (11.7s)
+B:And I check for the Free Shipping popup on the home page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (20.0s)
+B:And I check for the Free Shipping popup
+Test #21 is finished on thread #15 as Succeeded within 37.2592227 seconds
+Appdomain Disposed
+T:done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest10") (6.5s)
+B:Then I should see the Invalid Username and Password Error
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.6s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (0.9s)
+B:And I click on Kids
+T:done: MKAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (0.9s)
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (18.0s)
+B:And I check for the Free Shipping popup
+Test #22 is finished on thread #16 as Succeeded within 38.5003935 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (18.0s)
+B:And I check for the Free Shipping popup
+T:done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest100") (7.4s)
+B:Then I should be on the My Account Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (19.5s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.6s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.4s)
+B:Then the popup should appear with the correct information
+T:done: MKAccountLoginErrorTestingSteps.ThenIShouldBeOnTheMyAccountPage() (0.8s)
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.6s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)
+Test #24 is finished on thread #18 as Succeeded within 39.297345 seconds
+Appdomain Disposed
+Test #9 is finished on thread #4 as Succeeded within 44.7716656 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (19.3s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (0.6s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (20.1s)
+B:When I enter the SKU in the search box and submit
+T:done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (8.3s)
+B:Then I should be on the shopping cart page
+T:done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (20.2s)
+B:When I enter the email address 'SSBtestautomation@gmail.com' and the password 'SSBtest10'
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (6.4s)
+B:And I click on Pencils and Pencil Cases
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (0.4s)
+Test #10 is finished on thread #5 as Succeeded within 49.1206283 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (10.7s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (11.6s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.1s)
+B:And I continue on to the first Checkout Page
+T:done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword("SSBtestautomation...", "SSBtest10") (4.7s)
+B:Then I should see the Invalid Username and Password Error
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.3s)
+B:When I click on the Checkout button
+T:done: MKAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (0.9s)
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.0s)
+B:And I continue on to the first Checkout Page
+Test #23 is finished on thread #17 as Succeeded within 49.417676 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (11.9s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.8s)
+B:Then The expected information should be present
+T:done: MKIndividualTestsSteps.ThenTheExpectedInformationShouldBePresent() (0.3s)
+Test #11 is finished on thread #6 as Succeeded within 57.2962994 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIClickOnTheCheckoutButton() (4.8s)
+B:Then I should see the Checkout as Guest Button
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheCheckoutStepPage() (0.1s)
+Test #12 is finished on thread #7 as Succeeded within 58.1670681 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.9s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (20.0s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (10.2s)
+B:Then I will confirm the summary information
+T:done: MKIndividualTestsSteps.ThenIWillConfirmSummaryInformation() (0.6s)
+Test #14 is finished on thread #9 as Succeeded within 60.2052159 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (20.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (11.1s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (12.6s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.WhenIEnterTheSKUInTheSearchBoxAndSubmit() (15.9s)
+B:Then I should be on the Paua Shamrock product page
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnThePauaShamrockProductPage() (0.9s)
+Test #8 is finished on thread #3 as Succeeded within 65.5345456 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (12.3s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (11.2s)
+B:And I continue on to the second checkout page
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (21.2s)
+B:And I choose All from the Items per page selector
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (11.8s)
+B:When I click on the Checkout button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (13.9s)
+B:And I continue on to the second checkout page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (12.1s)
+B:And I continue on to the Order Confirmation page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.8s)
+B:And I continue on to the first Checkout Page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (12.4s)
+B:And I continue on to the Order Confirmation page
+T:error: unknown error: Element is not clickable at point (869, 274). Other element would receive the click: <div id="monetate_lightbox_mask" style="transform: translate3d(0px, 0px, 0px); height: 6228px; left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; width: 6024px; opacity: 0.6; display: block; background-color: rgb(0, 0, 0);" class=""></div>
+T:  (Session info: chrome=47.0.2526.73)
+T:  (Driver info: chromedriver=2.20.353124 (035346203162d32c80f1dce587c8154a1efa0c3b),platform=Mac OS X 10.10.5 x86_64)
+B:When I complete the form and confirm order summary information
+T:skipped because of previous errors
+B:When I click the Proceed to Payment and Review Button
+T:skipped because of previous errors
+B:Then I should be on the second checkout page
+T:skipped because of previous errors
+Test #15 is finished on thread #10 as Failed within 74.5304914 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenIClickOnTheCheckoutButton() (5.5s)
+B:When I click on the Checkout as Guest Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (11.8s)
+B:Then the correct information should be present
+T:done: MKIndividualTestsSteps.ThenTheCorrectInformationShouldBePresent() (0.9s)
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (12.6s)
+B:When I fill complete the payment information
+Test #16 is finished on thread #11 as Succeeded within 77.4728912 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (12.8s)
+B:And I click on the personalized musical notes pencils
+T:done: MKIndividualTestsSteps.WhenIFillCompleteThePaymentInformation() (5.0s)
+B:When I click the submit order button
+T:done: MKIndividualTestsSteps.WhenIClickOnTheCheckoutAsGuestButton() (7.5s)
+B:Then I should be on the first Checkout Page
+T:done: MKIndividualTestsSteps.ThenIShouldBeOnTheFirstCheckoutPage() (0.1s)
+Test #13 is finished on thread #8 as Succeeded within 84.6494487 seconds
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (12.5s)
+B:And I continue on to the Order Confirmation page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (15.3s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.WhenIClickTheSubmitOrderButton() (11.4s)
+B:Then I should be on the Order Confirmation page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (20.0s)
+B:When I close the popups
+T:done: MKIndividualTestsSteps.ThenIShouldSeeTheGooglePopup() (0.3s)
+Test #17 is finished on thread #12 as Succeeded within 94.4885171 seconds
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (14.1s)
+B:And I click personalize
+Appdomain Disposed
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.3s)
+B:Then I will confirm all the pertinent information
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (2.4s)
+B:And I enter Mr. Rodgers neighborhood in the input
+T:done: MKIndividualTestsSteps.ThenConfirmAllPertinentInformation() (1.1s)
+Test #19 is finished on thread #14 as Succeeded within 95.3650109 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (1.9s)
+B:And I click the personalization approval
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.0s)
+B:And I then click add to cart
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.3s)
+B:Then I will have completed the purchase
+T:done: MKIndividualTestsSteps.ThenWillHaveCompletedThePurchase() (0.2s)
+Test #4 is finished on thread #0 as Succeeded within 104.6705799 seconds
+T:done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (17.8s)
+B:When I close the popups
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() (3.2s)
+B:And I then click View Cart / Checkout
+T:done: MKIndividualTestsSteps.WhenICloseThePopups() (7.4s)
+B:Then they should not be present
+T:done: MKIndividualTestsSteps.ThenTheyShouldNotBePresent() (0.3s)
+Test #18 is finished on thread #13 as Succeeded within 108.8217597 seconds
+Appdomain Disposed
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickViewCartCheckout() (8.9s)
+B:And I enter the promotional code and apply
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterThePromotionalCodeAndApply() (3.6s)
+B:And I choose premium shipping from the selector
+T:done: MKMusicalPencislEndtoEndSteps.GivenIChoosePremiumShippingFromTheSelector() (1.4s)
+B:And I then click the bottom checkout button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIThenClickTheBottomCheckoutButton() (5.0s)
+B:And I click the Checkout as Guest button
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheCheckoutAsGuestButton() (7.3s)
+B:And I complete the form accordingly
+T:done: MKMusicalPencislEndtoEndSteps.GivenICompleteTheFormAccordingly() (7.4s)
+B:And I uncheck the Special Offers and Emails box
+T:done: MKMusicalPencislEndtoEndSteps.GivenIUncheckTheSpecialOffersAndEmailsBox() (0.5s)
+B:And I check the button to ship to a different address
+T:done: MKMusicalPencislEndtoEndSteps.GivenICheckTheButtonToShipToADifferentAddress() (0.6s)
+B:And I enter the additional address
+T:done: MKMusicalPencislEndtoEndSteps.GivenIEnterTheAdditionalAddress() (4.7s)
+B:And I click the radio button to designate the item is a gift
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheRadioButtonToDesignateTheItemIsAGift() (0.6s)
+B:And I click the button to Proceed to Payment and Review
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToProceedToPaymentAndReview() (6.0s)
+B:And I fill out the payment information
+T:done: MKMusicalPencislEndtoEndSteps.GivenIFillOutThePaymentInformation() (5.7s)
+B:And I click the button to submit the order
+T:done: MKMusicalPencislEndtoEndSteps.GivenIClickTheButtonToSubmitTheOrder() (16.3s)
+B:And I close all of the popup windows
+T:done: MKMusicalPencislEndtoEndSteps.GivenICloseAllOfThePopupWindows() (7.7s)
+B:Then I will be on the Order Confirmation Page
+T:error: Assert.AreEqual failed. Expected:<$21.00>. Actual:<$22.04>. 
+Test #26 is finished on thread #19 as Failed within 175.6433362 seconds
+Appdomain Disposed
+Total: 20
+Succeeded: 18
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 2

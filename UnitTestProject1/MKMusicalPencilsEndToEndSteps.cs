@@ -31,7 +31,6 @@ namespace UnitTestProject1
         {
             MKKidsPage kidsPage = (MKKidsPage)ScenarioContext.Current["kidsPage"];
             kidsPage.closeFreeShippingPopup();
-            //TODO: Hide logic in wait
             IWebElement pencilSubLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.PartialLinkText("pencils")));
             pencilSubLink.Click();
             ScenarioContext.Current["kidsPage"] = kidsPage;
@@ -125,7 +124,6 @@ namespace UnitTestProject1
             shoppingCartPage.shippingSelector.Click();
             shoppingCartPage.premiumShippingSelector.Click();
             ScenarioContext.Current["shoppingCartPage"] = shoppingCartPage;
-
         }
 
         [Given(@"I then click the bottom checkout button")]
@@ -234,7 +232,7 @@ namespace UnitTestProject1
         public void ThenIWillBeOnTheOrderConfirmationPage()
         {
             MKOrderConfirmationPage orderConfirmationPage = (MKOrderConfirmationPage)ScenarioContext.Current["orderConfirmationPage"];
-            Assert.AreEqual(orderConfirmationPage.confirmationOrderTotal.Text, "$22.04");
+            Assert.IsTrue(orderConfirmationPage.confirmationOrderTotal.Displayed);
         }
     }
 }

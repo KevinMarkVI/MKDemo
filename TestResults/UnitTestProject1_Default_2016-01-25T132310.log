@@ -1,0 +1,245 @@
+﻿Appdomain Disposed
+Test Suite Dump
+#0: UnitTestProject1/Default - 
+#1: Default - 
+#2: UnitTestProject1 - 
+#4: MK Individual Tests - 
+#5: Add Paua Shamrock Earrings to Cart and Confirm Popup Info - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+and+Confirm+Popup+Info
+#6: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Add+Paua+Shamrock+Earrings+to+Cart+click+Popup+and+Confirm+Shopping+Cart+Page+Load
+#7: Verify information on the Shopping Cart Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+information+on+the+Shopping+Cart+Page
+#8: Navigate to the Login Page and Verify Checkout as Guest button - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+the+Login+Page+and+Verify+Checkout+as+Guest+button
+#9: Navigate to CheckoutPage1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Navigate+to+CheckoutPage1
+#10: Verify Summary Information on Checkout Page 1 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Verify+Summary+Information+on+Checkout+Page+1
+#11: Complete Checkout Page 1 and Submit - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Checkout+Page+1+and+Submit
+#12: Confrim Order Summary information on Checkout Page2 - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confrim+Order+Summary+information+on+Checkout+Page2
+#13: Complete Payment Information and Submit Order - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Complete+Payment+Information+and+Submit+Order
+#14: Dismiss all the Popup Windows to get to the Order Confirmation Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Dismiss+all+the+Popup+Windows+to+get+to+the+Order+Confirmation+Page
+#15: Confirm Information on the Receipt Page - TestAssembly:UnitTestProject1/Feature:MK+Individual+Tests/Scenario:Confirm+Information+on+the+Receipt+Page
+End: Test Suite Dump
+Scheduler: considering #5 for thread #0
+Scheduler: using #5 for thread #0
+Test #5 is scheduled for thread #0
+Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #5/0 is started on thread #0
+Scheduler: considering #6 for thread #1
+Scheduler: using #6 for thread #1
+Test #6 is scheduled for thread #1
+Thread #1: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #6/0 is started on thread #1
+Scheduler: considering #7 for thread #2
+Scheduler: using #7 for thread #2
+Test #7 is scheduled for thread #2
+Thread #2: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #7/0 is started on thread #2
+Scheduler: considering #8 for thread #3
+Scheduler: using #8 for thread #3
+Test #8 is scheduled for thread #3
+Thread #3: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #8/0 is started on thread #3
+Scheduler: considering #9 for thread #4
+Scheduler: using #9 for thread #4
+Test #9 is scheduled for thread #4
+Thread #4: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #10 for thread #5
+Scheduler: using #10 for thread #5
+Test #10 is scheduled for thread #5
+Thread #5: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #9/0 is started on thread #4
+Scheduler: considering #11 for thread #6
+Scheduler: using #11 for thread #6
+Test #11 is scheduled for thread #6
+Thread #6: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #12 for thread #7
+Scheduler: using #12 for thread #7
+Test #12 is scheduled for thread #7
+Thread #7: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #13 for thread #8
+Scheduler: using #13 for thread #8
+Test #13 is scheduled for thread #8
+Thread #8: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #12/0 is started on thread #7
+Test #10/0 is started on thread #5
+Test #11/0 is started on thread #6
+Test #13/0 is started on thread #8
+Scheduler: considering #14 for thread #9
+Scheduler: using #14 for thread #9
+Test #14 is scheduled for thread #9
+Thread #9: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Scheduler: considering #15 for thread #10
+Scheduler: using #15 for thread #10
+Test #15 is scheduled for thread #10
+Thread #10: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\Kevin Berg\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.2.0\tools\TechTalk.SpecRun.Framework.Executor.dll
+Test #15/0 is started on thread #10
+Test #14/0 is started on thread #9
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+B:Given I am on the product page
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.0s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.7s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.3s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.2s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.0s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.7s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.7s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.6s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.5s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.2s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.9s)
+B:When I click the Add to Cart Button
+T:done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (18.0s)
+B:And I check for the Free Shipping popup
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.9s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.7s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.2s)
+B:And I continue to the Shopping Cart Page
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.8s)
+B:And I continue to the Shopping Cart Page
+T:error: Timed out after 15 seconds
+B:When I click on the Checkout button
+T:skipped because of previous errors
+B:Then I should see the Checkout as Guest Button
+T:skipped because of previous errors
+T:error: Timed out after 15 seconds
+B:Then The expected information should be present
+T:skipped because of previous errors
+Test #8 is finished on thread #3 as Failed within 55.900812 seconds
+T:error: Timed out after 15 seconds
+B:When I click the View Cart / Checkout Button
+T:skipped because of previous errors
+B:Then I should be on the shopping cart page
+T:skipped because of previous errors
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:And I continue on to the second checkout page
+T:skipped because of previous errors
+B:And I continue on to the Order Confirmation page
+T:skipped because of previous errors
+B:When I close the popups
+T:skipped because of previous errors
+B:Then they should not be present
+T:skipped because of previous errors
+Test #7 is finished on thread #2 as Failed within 56.381827 seconds
+Appdomain Disposed
+Test #6 is finished on thread #1 as Failed within 56.941848 seconds
+Test #14 is finished on thread #9 as Failed within 55.1257973 seconds
+Appdomain Disposed
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:When I complete the form and confirm order summary information
+T:skipped because of previous errors
+B:When I click the Proceed to Payment and Review Button
+T:skipped because of previous errors
+B:Then I should be on the second checkout page
+T:skipped because of previous errors
+Cancelling because configured number of failures reached
+T:done: MKIndividualTestsSteps.GivenICheckForPopUp() (25.3s)
+B:When I click the Add to Cart Button
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:And I continue on to the second checkout page
+T:skipped because of previous errors
+B:When I fill complete the payment information
+T:skipped because of previous errors
+B:When I click the submit order button
+T:skipped because of previous errors
+B:Then I should be on the Order Confirmation page
+T:skipped because of previous errors
+Test #11 is finished on thread #6 as Failed within 57.5731568 seconds
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:And I continue on to the second checkout page
+T:skipped because of previous errors
+B:And I continue on to the Order Confirmation page
+T:skipped because of previous errors
+B:When I close the popups
+T:skipped because of previous errors
+B:Then I will confirm all the pertinent information
+T:skipped because of previous errors
+Test #13 is finished on thread #8 as Failed within 57.7609622 seconds
+Appdomain Disposed
+Test #15 is finished on thread #10 as Failed within 57.9035318 seconds
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:When I click on the Checkout button
+T:skipped because of previous errors
+B:When I click on the Checkout as Guest Button
+T:skipped because of previous errors
+B:Then I should be on the first Checkout Page
+T:skipped because of previous errors
+Test #9 is finished on thread #4 as Failed within 60.4009868 seconds
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:Then I will confirm the summary information
+T:skipped because of previous errors
+Test #10 is finished on thread #5 as Failed within 61.2391203 seconds
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:And I continue on to the first Checkout Page
+T:skipped because of previous errors
+B:And I continue on to the second checkout page
+T:skipped because of previous errors
+B:Then the correct information should be present
+T:skipped because of previous errors
+Test #12 is finished on thread #7 as Failed within 62.8849568 seconds
+Appdomain Disposed
+T:error: Timed out after 15 seconds
+B:Then the popup should appear with the correct information
+T:skipped because of previous errors
+Test #5 is finished on thread #0 as Failed within 76.5360099 seconds
+Appdomain Disposed
+Total: 11
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 11

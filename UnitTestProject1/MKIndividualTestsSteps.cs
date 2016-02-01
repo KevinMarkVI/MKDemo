@@ -6,6 +6,7 @@ using UnitTestProject1.PageObjects.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
+using OpenQA.Selenium.Interactions;
 
 namespace UnitTestProject1
 {
@@ -63,6 +64,8 @@ namespace UnitTestProject1
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
             productPage.closeFreeShippingPopup();
+            //Not needed, just to ensure the add to cart button is clickable
+            System.Threading.Thread.Sleep(5000);
             ScenarioContext.Current["productPage"] = productPage;
         }
 
@@ -96,8 +99,6 @@ namespace UnitTestProject1
         {
             driver.Navigate().GoToUrl(MKProductPage.URL);
             MKProductPage productPage = new MKProductPage(driver);
-            IWebElement addToCartButton = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            Assert.IsTrue(addToCartButton.Displayed);
             ScenarioContext.Current["productPage"] = productPage;
         }
 
@@ -105,8 +106,7 @@ namespace UnitTestProject1
         public void WhenIClickTheAddToCartButton()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
-            IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            productPageAddToCart.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id")))).Click();
             System.Threading.Thread.Sleep(2000);
             IWebElement productPopUp = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
             Assert.IsTrue(productPopUp.Displayed);
@@ -145,8 +145,7 @@ namespace UnitTestProject1
         public void GivenIAmOnTheShoppingCartPage()
         {
             MKProductPage productPage = (MKProductPage)ScenarioContext.Current["productPage"];
-            IWebElement productPageAddToCart = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id"))));
-            productPageAddToCart.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.addToCartButton.GetAttribute("id")))).Click();
             System.Threading.Thread.Sleep(2000);
             IWebElement popupViewCartProductButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(productPage.popupViewCartCheckoutButton.GetAttribute("id"))));
             popupViewCartProductButton.Click();

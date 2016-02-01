@@ -18,12 +18,14 @@ namespace UnitTestProject1.Hooks
         public void BeforeScenario()
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(CapabilityType.BrowserName, "chrome");
-            capabilities.SetCapability(CapabilityType.Version, "47.0");
+            capabilities.SetCapability(CapabilityType.BrowserName, "firefox");
+            capabilities.SetCapability(CapabilityType.Version, "43.0");
             capabilities.SetCapability(CapabilityType.Platform, "OS X 10.10");
             capabilities.SetCapability("username", Environment.GetEnvironmentVariable("SAUCE_USERNAME"));
             capabilities.SetCapability("accessKey", Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY"));
             capabilities.SetCapability("name", ScenarioContext.Current.ScenarioInfo.Title);
+            //This capability is used to allow access to the test result data on the SL dashboard
+            capabilities.SetCapability("public", "public");
 
             CustomRemoteWebDriver webDriver = new CustomRemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), capabilities, TimeSpan.FromSeconds(600));
             webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -36,7 +38,6 @@ namespace UnitTestProject1.Hooks
         {
             IWebDriver driver = (IWebDriver)ScenarioContext.Current["driver"];
             bool passed = ScenarioContext.Current.TestError == null;
-            //bool passed = true;
             ((IJavaScriptExecutor)driver).ExecuteScript("sauce:job-result=" + (passed ? "passed" : "failed"));
             driver.Quit();
         }

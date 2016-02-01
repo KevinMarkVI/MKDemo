@@ -91,7 +91,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.And("I check for the Free Shipping popup on the account login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When("I enter the email address \'SSBtestautomation@gmail\' and the password \'SSBtest10\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I enter the email address \'SSBtestautomation@gmail\' and the password \'SSBtest100\'" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.Then("I should see the Invalid Username and Password Error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

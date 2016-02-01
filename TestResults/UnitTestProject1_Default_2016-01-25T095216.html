@@ -1,0 +1,4262 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>UnitTestProject1 Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+            
+            
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>UnitTestProject1 Test Execution Report</h1>
+        <ul>
+            <li>Project: UnitTestProject1</li>
+            <li>Configuration: Default</li>
+            <li>Test Assemblies: C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\bin\Debug\UnitTestProject1.dll</li>
+            <li>Start Time: 1/25/2016 9:52:16 AM</li>
+            <li>Duration: 00:02:28.2863384</li>
+            <li>Test Threads: 40</li>
+        </ul>
+
+        <h2>Result: 7 failed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+            <td>
+            65%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 129px;" 
+                                title="13 succeeded" 
+                                />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 69px;" 
+                                title="7 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>20</td>
+    <td>13</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#0</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 80px;" 
+                title="Paua Shamrock Earrings End to End (in MK end to end test case)" 
+                href="#t1281068815.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#1</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 20px;" 
+                title="Confirm Alert is present on homepage (in MK Individual Tests)" 
+                href="#t510041308.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#2</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 31px;" 
+                title="Confirm Alert is Present and Dismiss (in MK Individual Tests)" 
+                href="#t162003897.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#3</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 84px;" 
+                title="Search for Paua Shamrock Earrings (in MK Individual Tests)" 
+                href="#t-1297465784.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#4</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 38px;" 
+                title="Add Paua Shamrock Earrings to Cart and Confirm Popup Info (in MK Individual Tests)" 
+                href="#t118516224.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#5</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 50px;" 
+                title="Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load (in MK Individual Tests)" 
+                href="#t-78859643.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#6</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 51px;" 
+                title="Verify information on the Shopping Cart Page (in MK Individual Tests)" 
+                href="#t1634110217.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#7</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 53px;" 
+                title="Navigate to the Login Page and Verify Checkout as Guest button (in MK Individual Tests)" 
+                href="#t-1192265979.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#8</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 55px;" 
+                title="Navigate to CheckoutPage1 (in MK Individual Tests)" 
+                href="#t-2104053305.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#9</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 58px;" 
+                title="Verify Summary Information on Checkout Page 1 (in MK Individual Tests)" 
+                href="#t805522781.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#10</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 59px;" 
+                title="Complete Checkout Page 1 and Submit (in MK Individual Tests)" 
+                href="#t512868338.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#11</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 78px;" 
+                title="Confrim Order Summary information on Checkout Page2 (in MK Individual Tests)" 
+                href="#t-381477281.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#12</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 54px;" 
+                title="Complete Payment Information and Submit Order (in MK Individual Tests)" 
+                href="#t-2076185334.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#13</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 56px;" 
+                title="Dismiss all the Popup Windows to get to the Order Confirmation Page (in MK Individual Tests)" 
+                href="#t1167197841.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#14</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 59px;" 
+                title="Confirm Information on the Receipt Page (in MK Individual Tests)" 
+                href="#t1463491379.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#15</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 4px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 33px;" 
+                title="Navigate to the My Account Page (in My Account Login Error Testing)" 
+                href="#t-1550055858.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#16</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 4px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 35px;" 
+                title="Entering an Invalid Email should Display an Error (in My Account Login Error Testing)" 
+                href="#t1657462233.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#17</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 5px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 52px;" 
+                title="Entering an Invalid Password should Display an Error (in My Account Login Error Testing)" 
+                href="#t-397844084.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#18</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 6px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 31px;" 
+                title="After Entering a Valid Email and Password I should see the Account Page (in My Account Login Error Testing)" 
+                href="#t1312048565.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#19</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 6px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 132px;" 
+                title="End to End Musical Pencils Test Flow (in Purchasing Musical Notes Pencils)" 
+                href="#t-521127767.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#20</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 7px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#21</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 7px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#22</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 7px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#23</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 7px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#24</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 7px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#25</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 8px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#26</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 8px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#27</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 9px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#28</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 9px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#29</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 10px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#30</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 11px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#31</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 12px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#32</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 13px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#33</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 13px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#34</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 14px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#35</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 14px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#36</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 15px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#37</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 15px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#38</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 16px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-N7IQCOC">#39</td>
+                            <td colspan="3">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 16px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                            <td class="scale-10-label" style="width: 70px;min-width: 70px;">0s</td>
+                            <td class="scale-10-label" style="width: 70px;min-width: 70px;">74s</td>
+                        <td class="scale-10-label">148s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Test Result View</h2>
+        <div id="testview" class="viewbox">
+            <div id="bar-control">
+                <div id="bar-control-sort">
+                    <label>sort by:</label>
+                    <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                    <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+                </div>
+                <div id="bar-control-heights">
+                    <label>heights:</label>
+                    <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+                    
+                </div>
+            </div>
+            <table class="vertical-scale" cellpadding="0" cellspacing="0">
+                <tr class="scale-max">
+                    <td class="left-padding scale-max-label">&nbsp;</td>
+                    <td colspan="20">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-mid">
+                    <td class="left-padding scale-mid-label">&nbsp;</td>
+                    <td colspan="20">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-min">
+                    <td class="left-padding scale-min-label">&nbsp;</td>
+                    <td colspan="20">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+            </table>
+            <div class="scrollable">
+                <table class="testview-items" cellpadding="0" cellspacing="0">
+                    <tr class="testview-items-row">
+                        <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="90.3458038" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="7.625">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 39px;"
+            title="Paua Shamrock Earrings End to End (in MK end to end test case)"
+            href="#t1281068815.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="26.0726822" data-sr-rescode="110" data-sr-order="1" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 11px;"
+            title="Confirm Alert is present on homepage (in MK Individual Tests)"
+            href="#t510041308.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="37.7409789" data-sr-rescode="110" data-sr-order="2" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 16px;"
+            title="Confirm Alert is Present and Dismiss (in MK Individual Tests)"
+            href="#t162003897.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="93.5840777" data-sr-rescode="110" data-sr-order="3" data-sr-acttime="1.577">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 40px;"
+            title="Search for Paua Shamrock Earrings (in MK Individual Tests)"
+            href="#t-1297465784.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="44.7773036" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="2.953">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 19px;"
+            title="Add Paua Shamrock Earrings to Cart and Confirm Popup Info (in MK Individual Tests)"
+            href="#t118516224.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="56.8552623" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="10.468">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 24px;"
+            title="Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load (in MK Individual Tests)"
+            href="#t-78859643.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="58.4178595" data-sr-rescode="110" data-sr-order="6" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 25px;"
+            title="Verify information on the Shopping Cart Page (in MK Individual Tests)"
+            href="#t1634110217.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="64.228291" data-sr-rescode="110" data-sr-order="8" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 27px;"
+            title="Verify Summary Information on Checkout Page 1 (in MK Individual Tests)"
+            href="#t805522781.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="83.9795274" data-sr-rescode="110" data-sr-order="11" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 36px;"
+            title="Confrim Order Summary information on Checkout Page2 (in MK Individual Tests)"
+            href="#t-381477281.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="35.7575509" data-sr-rescode="110" data-sr-order="15" data-sr-acttime="5.405">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 15px;"
+            title="Navigate to the My Account Page (in My Account Login Error Testing)"
+            href="#t-1550055858.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="37.2181192" data-sr-rescode="110" data-sr-order="16" data-sr-acttime="4.735">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 16px;"
+            title="Entering an Invalid Email should Display an Error (in My Account Login Error Testing)"
+            href="#t1657462233.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="54.9616383" data-sr-rescode="110" data-sr-order="17" data-sr-acttime="6">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 24px;"
+            title="Entering an Invalid Password should Display an Error (in My Account Login Error Testing)"
+            href="#t-397844084.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="32.4495931" data-sr-rescode="110" data-sr-order="19" data-sr-acttime="4.952">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 14px;"
+            title="After Entering a Valid Email and Password I should see the Account Page (in My Account Login Error Testing)"
+            href="#t1312048565.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="59.8229226" data-sr-rescode="440" data-sr-order="7" data-sr-acttime="0.015">
+        <a
+            class="bar colorFailed" 
+            style="height: 26px;"
+            title="Navigate to the Login Page and Verify Checkout as Guest button (in MK Individual Tests)"
+            href="#t-1192265979.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="61.5863389" data-sr-rescode="440" data-sr-order="9" data-sr-acttime="0.016">
+        <a
+            class="bar colorFailed" 
+            style="height: 26px;"
+            title="Navigate to CheckoutPage1 (in MK Individual Tests)"
+            href="#t-2104053305.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="64.8097434" data-sr-rescode="440" data-sr-order="10" data-sr-acttime="0.015">
+        <a
+            class="bar colorFailed" 
+            style="height: 28px;"
+            title="Complete Checkout Page 1 and Submit (in MK Individual Tests)"
+            href="#t512868338.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="58.1488431" data-sr-rescode="440" data-sr-order="12" data-sr-acttime="0.016">
+        <a
+            class="bar colorFailed" 
+            style="height: 25px;"
+            title="Complete Payment Information and Submit Order (in MK Individual Tests)"
+            href="#t-2076185334.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="60.0687783" data-sr-rescode="440" data-sr-order="13" data-sr-acttime="0.016">
+        <a
+            class="bar colorFailed" 
+            style="height: 26px;"
+            title="Dismiss all the Popup Windows to get to the Order Confirmation Page (in MK Individual Tests)"
+            href="#t1167197841.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="62.8290953" data-sr-rescode="440" data-sr-order="14" data-sr-acttime="0.015">
+        <a
+            class="bar colorFailed" 
+            style="height: 27px;"
+            title="Confirm Information on the Receipt Page (in MK Individual Tests)"
+            href="#t1463491379.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="140.3086363" data-sr-rescode="440" data-sr-order="18" data-sr-acttime="0.0">
+        <a
+            class="bar colorFailed" 
+            style="height: 60px;"
+            title="End to End Musical Pencils Test Flow (in Purchasing Musical Notes Pencils)"
+            href="#t-521127767.0">&nbsp;</a>
+    </td>
+                        <td class="right-padding">&nbsp;</td>
+                    </tr>
+                    <tr class="horizontal-scale">
+                        <td class="left-padding">&nbsp;</td>
+                        <td colspan="10">&nbsp;</td>
+                            <td class="scale-10-label" colspan="10">10</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Feature Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+    <tr>
+            <td><a href="#f-1094047952">MK end to end test case</a></td>
+            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+    <tr>
+            <td><a href="#f-1729506386">MK Individual Tests</a></td>
+            <td>
+            57%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 113px;" 
+                                title="8 succeeded" 
+                                />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 85px;" 
+                                title="6 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>14</td>
+    <td>8</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+    <tr>
+            <td><a href="#f-1524901153">My Account Login Error Testing</a></td>
+            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="4 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+    <tr>
+            <td><a href="#f-429347652">Purchasing Musical Notes Pencils</a></td>
+            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+        </table>
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+                    <td>
+                        <a href="#t-1192265979.0">Navigate to the Login Page and Verify Checkout as Guest button (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t-2104053305.0">Navigate to CheckoutPage1 (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t512868338.0">Complete Checkout Page 1 and Submit (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t-2076185334.0">Complete Payment Information and Submit Order (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t1167197841.0">Dismiss all the Popup Windows to get to the Order Confirmation Page (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t1463491379.0">Confirm Information on the Receipt Page (in UnitTestProject1, MK Individual Tests)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t-521127767.0">End to End Musical Pencils Test Flow (in UnitTestProject1, Purchasing Musical Notes Pencils)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Timed out after 15 seconds</div></td>
+                </tr>
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f-1094047952" />
+            <h3>Feature: MK end to end test case</h3>
+                <div class="description">
+                    Tests the entire flow from beginning to end
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t1281068815.0">Scenario: Paua Shamrock Earrings End to End</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+            </table>
+            <a name="f-1729506386" />
+            <h3>Feature: MK Individual Tests</h3>
+                <div class="description">
+                    Scenarios designed to test single aspect of the Miles Kimball Website
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t510041308.0">Scenario: Confirm Alert is present on homepage</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t162003897.0">Scenario: Confirm Alert is Present and Dismiss</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1297465784.0">Scenario: Search for Paua Shamrock Earrings</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t118516224.0">Scenario: Add Paua Shamrock Earrings to Cart and Confirm Popup Info</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-78859643.0">Scenario: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1634110217.0">Scenario: Verify information on the Shopping Cart Page</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1192265979.0">Scenario: Navigate to the Login Page and Verify Checkout as Guest button</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-2104053305.0">Scenario: Navigate to CheckoutPage1</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t805522781.0">Scenario: Verify Summary Information on Checkout Page 1</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t512868338.0">Scenario: Complete Checkout Page 1 and Submit</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-381477281.0">Scenario: Confrim Order Summary information on Checkout Page2</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-2076185334.0">Scenario: Complete Payment Information and Submit Order</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1167197841.0">Scenario: Dismiss all the Popup Windows to get to the Order Confirmation Page</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1463491379.0">Scenario: Confirm Information on the Receipt Page</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+            </table>
+            <a name="f-1524901153" />
+            <h3>Feature: My Account Login Error Testing</h3>
+                <div class="description">
+                    Verify the behavior of Account Login Flow
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-1550055858.0">Scenario: Navigate to the My Account Page</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1657462233.0">Scenario: Entering an Invalid Email should Display an Error</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-397844084.0">Scenario: Entering an Invalid Password should Display an Error</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1312048565.0">Scenario: After Entering a Valid Email and Password I should see the Account Page</a>
+
+                        </td>
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                                style="width: 199px;" 
+                                title="1 succeeded" 
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+            </table>
+            <a name="f-429347652" />
+            <h3>Feature: Purchasing Musical Notes Pencils</h3>
+                <div class="description">
+                    Tests the entire flow from beginning to end
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-521127767.0">Scenario: End to End Musical Pencils Test Flow</a>
+
+                        </td>
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                                style="width: 199px;" 
+                                title="1 failed" 
+                            href="#error_summary"
+                                />
+                    </td>
+            </tr>
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t1281068815.0" />
+            <h3>Scenario: Paua Shamrock Earrings End to End (in UnitTestProject1, MK end to end test case)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 90.3458038</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.4s)</pre>
+                        </td>
+                        <td>Succeeded in 28.606s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.3s)</pre>
+                        </td>
+                        <td>Succeeded in 6.298s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (10.2s)</pre>
+                        </td>
+                        <td>Succeeded in 10.172s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (10.3s)</pre>
+                        </td>
+                        <td>Succeeded in 10.328s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (10.0s)</pre>
+                        </td>
+                        <td>Succeeded in 9.952s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the Order Confirmation page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheReceiptPage() (15.3s)</pre>
+                        </td>
+                        <td>Succeeded in 15.281s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I close the popups</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.WhenICloseThePopups() (7.6s)</pre>
+                        </td>
+                        <td>Succeeded in 7.625s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I will have completed the purchase</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Paua Shamrock Earrings End to End]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenWillHaveCompletedThePurchase() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.126s</td>
+                    </tr>
+            </table>
+            <a name="t510041308.0" />
+            <h3>Scenario: Confirm Alert is present on homepage (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 26.0726822</li>
+                <li>Thread: #1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the Miles Kimball homepage</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Alert is present on homepage]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (8.4s)</pre>
+                        </td>
+                        <td>Succeeded in 23.735s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then the free shipping alert should be present</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Confirm Alert is present on homepage]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenTheAlertShouldBePresent() (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.325s</td>
+                    </tr>
+            </table>
+            <a name="t162003897.0" />
+            <h3>Scenario: Confirm Alert is Present and Dismiss (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 37.7409789</li>
+                <li>Thread: #2</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the Miles Kimball homepage</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Alert is Present and Dismiss]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (13.2s)</pre>
+                        </td>
+                        <td>Succeeded in 32.872s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And the Free Shipping alert Appears</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Alert is Present and Dismiss]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenTheFreeShippingAlertAppears() (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.267s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I dismiss the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Alert is Present and Dismiss]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIDismissThePopup() (1.2s)</pre>
+                        </td>
+                        <td>Succeeded in 1.202s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then the alert should not be present</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Confirm Alert is Present and Dismiss]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenTheAlertShouldNotBePresent() (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.281s</td>
+                    </tr>
+            </table>
+            <a name="t-1297465784.0" />
+            <h3>Scenario: Search for Paua Shamrock Earrings (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 93.5840777</li>
+                <li>Thread: #3</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the Miles Kimball homepage</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Search for Paua Shamrock Earrings]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (7.7s)</pre>
+                        </td>
+                        <td>Succeeded in 26.289s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the home page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Search for Paua Shamrock Earrings]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (20.1s)</pre>
+                        </td>
+                        <td>Succeeded in 20.079s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I enter the SKU in the search box and submit</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Search for Paua Shamrock Earrings]-->
+                            <pre class="log">done: MKIndividualTestsSteps.WhenIEnterTheSKUInTheSearchBoxAndSubmit() (1.6s)</pre>
+                        </td>
+                        <td>Succeeded in 1.577s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the Paua Shamrock product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Search for Paua Shamrock Earrings]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenIShouldBeOnThePauaShamrockProductPage() (41.8s)</pre>
+                        </td>
+                        <td>Succeeded in 41.797s</td>
+                    </tr>
+            </table>
+            <a name="t118516224.0" />
+            <h3>Scenario: Add Paua Shamrock Earrings to Cart and Confirm Popup Info (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 44.7773036</li>
+                <li>Thread: #4</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Add Paua Shamrock Earrings to Cart and Confirm Popup Info]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.4s)</pre>
+                        </td>
+                        <td>Succeeded in 30.875s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Add Paua Shamrock Earrings to Cart and Confirm Popup Info]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.8s)</pre>
+                        </td>
+                        <td>Succeeded in 5.782s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click the Add to Cart Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Add Paua Shamrock Earrings to Cart and Confirm Popup Info]-->
+                            <pre class="log">done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (2.9s)</pre>
+                        </td>
+                        <td>Succeeded in 2.953s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then the popup should appear with the correct information</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Add Paua Shamrock Earrings to Cart and Confirm Popup Info]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenThePopupShouldAppearWithTheCorrectInformation() (0.4s)</pre>
+                        </td>
+                        <td>Succeeded in 0.39s</td>
+                    </tr>
+            </table>
+            <a name="t-78859643.0" />
+            <h3>Scenario: Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:17 AM</li>
+                <li>Execution time (sec): 56.8552623</li>
+                <li>Thread: #5</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (17.0s)</pre>
+                        </td>
+                        <td>Succeeded in 34.308s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.3s)</pre>
+                        </td>
+                        <td>Succeeded in 6.345s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click the Add to Cart Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load]-->
+                            <pre class="log">done: MKIndividualTestsSteps.WhenIClickTheAddToCartButton() (3.0s)</pre>
+                        </td>
+                        <td>Succeeded in 3.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click the View Cart / Checkout Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load]-->
+                            <pre class="log">done: MKIndividualTestsSteps.WhenIClickTheViewCartCheckoutButton() (7.5s)</pre>
+                        </td>
+                        <td>Succeeded in 7.452s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the shopping cart page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Add Paua Shamrock Earrings to Cart click Popup and Confirm Shopping Cart Page Load]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenIShouldBeOnTheCartPageAndTheCorrectInformationShouldBeDisplayed() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.156s</td>
+                    </tr>
+            </table>
+            <a name="t1634110217.0" />
+            <h3>Scenario: Verify information on the Shopping Cart Page (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:18 AM</li>
+                <li>Execution time (sec): 58.4178595</li>
+                <li>Thread: #6</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify information on the Shopping Cart Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.3s)</pre>
+                        </td>
+                        <td>Succeeded in 35.422s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify information on the Shopping Cart Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.7s)</pre>
+                        </td>
+                        <td>Succeeded in 5.735s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify information on the Shopping Cart Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (11.3s)</pre>
+                        </td>
+                        <td>Succeeded in 11.343s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then The expected information should be present</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Verify information on the Shopping Cart Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenTheExpectedInformationShouldBePresent() (0.3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.344s</td>
+                    </tr>
+            </table>
+            <a name="t-1192265979.0" />
+            <h3>Scenario: Navigate to the Login Page and Verify Checkout as Guest button (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:18 AM</li>
+                <li>Execution time (sec): 59.8229226</li>
+                <li>Thread: #7</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to the Login Page and Verify Checkout as Guest button]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.7s)</pre>
+                        </td>
+                        <td>Succeeded in 31.497s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to the Login Page and Verify Checkout as Guest button]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.4s)</pre>
+                        </td>
+                        <td>Succeeded in 6.407s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to the Login Page and Verify Checkout as Guest button]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.NavigateToTheLoginPageAndVerifyCheckoutAsGuestButton() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 44
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 17.921s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click on the Checkout button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Navigate to the Login Page and Verify Checkout as Guest button]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.015s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should see the Checkout as Guest Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Navigate to the Login Page and Verify Checkout as Guest button]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.031s</td>
+                    </tr>
+            </table>
+            <a name="t805522781.0" />
+            <h3>Scenario: Verify Summary Information on Checkout Page 1 (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:19 AM</li>
+                <li>Execution time (sec): 64.228291</li>
+                <li>Thread: #9</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify Summary Information on Checkout Page 1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.2s)</pre>
+                        </td>
+                        <td>Succeeded in 31.605s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify Summary Information on Checkout Page 1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.1s)</pre>
+                        </td>
+                        <td>Succeeded in 6.095s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify Summary Information on Checkout Page 1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (10.6s)</pre>
+                        </td>
+                        <td>Succeeded in 10.608s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Verify Summary Information on Checkout Page 1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (10.2s)</pre>
+                        </td>
+                        <td>Succeeded in 10.172s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I will confirm the summary information</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Verify Summary Information on Checkout Page 1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenIWillConfirmSummaryInformation() (0.6s)</pre>
+                        </td>
+                        <td>Succeeded in 0.656s</td>
+                    </tr>
+            </table>
+            <a name="t-2104053305.0" />
+            <h3>Scenario: Navigate to CheckoutPage1 (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:19 AM</li>
+                <li>Execution time (sec): 61.5863389</li>
+                <li>Thread: #8</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.1s)</pre>
+                        </td>
+                        <td>Succeeded in 31.075s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.9s)</pre>
+                        </td>
+                        <td>Succeeded in 5.906s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.NavigateToCheckoutPage1() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 52
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 18.187s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click on the Checkout button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click on the Checkout as Guest Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Navigate to CheckoutPage1]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.031s</td>
+                    </tr>
+            </table>
+            <a name="t512868338.0" />
+            <h3>Scenario: Complete Checkout Page 1 and Submit (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:19 AM</li>
+                <li>Execution time (sec): 64.8097434</li>
+                <li>Thread: #10</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.3s)</pre>
+                        </td>
+                        <td>Succeeded in 32.623s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.4s)</pre>
+                        </td>
+                        <td>Succeeded in 6.453s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.CompleteCheckoutPage1AndSubmit() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 68
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 18.094s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I complete the form and confirm order summary information</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.015s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click the Proceed to Payment and Review Button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Complete Checkout Page 1 and Submit]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.031s</td>
+                    </tr>
+            </table>
+            <a name="t-381477281.0" />
+            <h3>Scenario: Confrim Order Summary information on Checkout Page2 (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:20 AM</li>
+                <li>Execution time (sec): 83.9795274</li>
+                <li>Thread: #11</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (16.3s)</pre>
+                        </td>
+                        <td>Succeeded in 32.318s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.2s)</pre>
+                        </td>
+                        <td>Succeeded in 6.22s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() (12.6s)</pre>
+                        </td>
+                        <td>Succeeded in 12.562s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheFirstCheckoutPage() (10.8s)</pre>
+                        </td>
+                        <td>Succeeded in 10.781s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheSecondCheckoutPage() (13.8s)</pre>
+                        </td>
+                        <td>Succeeded in 13.811s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then the correct information should be present</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Confrim Order Summary information on Checkout Page2]-->
+                            <pre class="log">done: MKIndividualTestsSteps.ThenTheCorrectInformationShouldBePresent() (1.0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.985s</td>
+                    </tr>
+            </table>
+            <a name="t-2076185334.0" />
+            <h3>Scenario: Complete Payment Information and Submit Order (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:20 AM</li>
+                <li>Execution time (sec): 58.1488431</li>
+                <li>Thread: #12</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.2s)</pre>
+                        </td>
+                        <td>Succeeded in 27.473s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.9s)</pre>
+                        </td>
+                        <td>Succeeded in 5.922s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.CompletePaymentInformationAndSubmitOrder() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 86
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 17.921s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I fill complete the payment information</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I click the submit order button</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the Order Confirmation page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Complete Payment Information and Submit Order]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.031s</td>
+                    </tr>
+            </table>
+            <a name="t1167197841.0" />
+            <h3>Scenario: Dismiss all the Popup Windows to get to the Order Confirmation Page (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:21 AM</li>
+                <li>Execution time (sec): 60.0687783</li>
+                <li>Thread: #13</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (14.7s)</pre>
+                        </td>
+                        <td>Succeeded in 28.11s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (6.0s)</pre>
+                        </td>
+                        <td>Succeeded in 5.985s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.DismissAllThePopupWindowsToGetToTheOrderConfirmationPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 96
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 18.061s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the Order Confirmation page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I close the popups</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.016s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then they should not be present</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Dismiss all the Popup Windows to get to the Order Confirmation Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.031s</td>
+                    </tr>
+            </table>
+            <a name="t1463491379.0" />
+            <h3>Scenario: Confirm Information on the Receipt Page (in UnitTestProject1, MK Individual Tests)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:21 AM</li>
+                <li>Execution time (sec): 62.8290953</li>
+                <li>Thread: #14</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the product page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheProductPage() (15.9s)</pre>
+                        </td>
+                        <td>Succeeded in 28.685s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUp() (5.8s)</pre>
+                        </td>
+                        <td>Succeeded in 5.829s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue to the Shopping Cart Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKIndividualTestsSteps.GivenIAmOnTheShoppingCartPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTestsSteps.cs:line 152
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.MKIndividualTestsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature.cs:line 0
+   at UnitTestProject1.MKIndividualTestsFeature.ConfirmInformationOnTheReceiptPage() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKIndividualTests.feature:line 106
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 18.297s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the first Checkout Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the second checkout page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I continue on to the Order Confirmation page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I close the popups</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.015s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I will confirm all the pertinent information</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Confirm Information on the Receipt Page]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.047s</td>
+                    </tr>
+            </table>
+            <a name="t-1550055858.0" />
+            <h3>Scenario: Navigate to the My Account Page (in UnitTestProject1, My Account Login Error Testing)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:21 AM</li>
+                <li>Execution time (sec): 35.7575509</li>
+                <li>Thread: #15</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the Miles Kimball homepage</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to the My Account Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (8.1s)</pre>
+                        </td>
+                        <td>Succeeded in 22.365s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the home page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Navigate to the My Account Page]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (0.8s)</pre>
+                        </td>
+                        <td>Succeeded in 0.813s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I Click on the My Account Link</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Navigate to the My Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.WhenIClickOnTheMyAccountLink() (5.4s)</pre>
+                        </td>
+                        <td>Succeeded in 5.405s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the Account Login Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Navigate to the My Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.ThenIShouldBeOnTheAccountPage() (0.1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.125s</td>
+                    </tr>
+            </table>
+            <a name="t1657462233.0" />
+            <h3>Scenario: Entering an Invalid Email should Display an Error (in UnitTestProject1, My Account Login Error Testing)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:22 AM</li>
+                <li>Execution time (sec): 37.2181192</li>
+                <li>Thread: #16</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the MK Account Login Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Entering an Invalid Email should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (7.9s)</pre>
+                        </td>
+                        <td>Succeeded in 21.51s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the account login page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Entering an Invalid Email should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (0.7s)</pre>
+                        </td>
+                        <td>Succeeded in 0.735s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I enter the email address &#39;SSBtestautomation@gmail&#39; and the password &#39;SSBtest10&#39;</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Entering an Invalid Email should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword(&quot;SSBtestautomation...&quot;, &quot;SSBtest10&quot;) (4.7s)</pre>
+                        </td>
+                        <td>Succeeded in 4.735s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should see the Invalid Username and Password Error</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Entering an Invalid Email should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (0.9s)</pre>
+                        </td>
+                        <td>Succeeded in 0.936s</td>
+                    </tr>
+            </table>
+            <a name="t-397844084.0" />
+            <h3>Scenario: Entering an Invalid Password should Display an Error (in UnitTestProject1, My Account Login Error Testing)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:23 AM</li>
+                <li>Execution time (sec): 54.9616383</li>
+                <li>Thread: #17</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the MK Account Login Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Entering an Invalid Password should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (6.4s)</pre>
+                        </td>
+                        <td>Succeeded in 18.06s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the account login page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - Entering an Invalid Password should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (20.2s)</pre>
+                        </td>
+                        <td>Succeeded in 20.156s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I enter the email address &#39;SSBtestautomation@gmail.com&#39; and the password &#39;SSBtest10&#39;</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - Entering an Invalid Password should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword(&quot;SSBtestautomation...&quot;, &quot;SSBtest10&quot;) (6.0s)</pre>
+                        </td>
+                        <td>Succeeded in 6s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should see the Invalid Username and Password Error</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - Entering an Invalid Password should Display an Error]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.ThenIShouldSeeTheInvalidUsernameAndPasswordError() (0.8s)</pre>
+                        </td>
+                        <td>Succeeded in 0.827s</td>
+                    </tr>
+            </table>
+            <a name="t-521127767.0" />
+            <h3>Scenario: End to End Musical Pencils Test Flow (in UnitTestProject1, Purchasing Musical Notes Pencils)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 1/25/2016 9:52:24 AM</li>
+                <li>Execution time (sec): 140.3086363</li>
+                <li>Thread: #19</li>
+                <li>Error: Timed out after 15 seconds</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the Miles Kimball homepage</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenIAmOnTheMilesKimballHomepage() (10.7s)</pre>
+                        </td>
+                        <td>Succeeded in 23.429s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the home page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKIndividualTestsSteps.GivenICheckForPopUpHomePage() (0.9s)</pre>
+                        </td>
+                        <td>Succeeded in 0.859s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click on Kids</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIClickOnKids() (5.8s)</pre>
+                        </td>
+                        <td>Succeeded in 5.767s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click on Pencils and Pencil Cases</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIClickOnPencilsAndPencilCases() (21.3s)</pre>
+                        </td>
+                        <td>Succeeded in 21.264s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I choose All from the Items per page selector</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIChooseAllFromTheItemsPerPageSelector() (6.3s)</pre>
+                        </td>
+                        <td>Succeeded in 6.314s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click on the personalized musical notes pencils</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIClickOnThePersonalizedMusicalNotesPencils() (49.2s)</pre>
+                        </td>
+                        <td>Succeeded in 49.201s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click personalize</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIClickPersonalize() (2.8s)</pre>
+                        </td>
+                        <td>Succeeded in 2.766s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I enter Mr. Rodgers neighborhood in the input</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIEnterMrRodgersNeighborhoodInTheInput() (2.5s)</pre>
+                        </td>
+                        <td>Succeeded in 2.546s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click the personalization approval</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">done: MKMusicalPencislEndtoEndSteps.GivenIClickThePersonalizationApproval() (1.4s)</pre>
+                        </td>
+                        <td>Succeeded in 1.422s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I then click add to cart</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">error: Timed out after 15 seconds</pre>
+                                <div class="errorMessage">Timed out after 15 seconds</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverTimeoutException: Timed out after 15 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 215
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition) in c:\Projects\webdriver\dotnet\src\support\UI\DefaultWait.cs:line 199
+   at UnitTestProject1.MKMusicalPencislEndtoEndSteps.GivenIThenClickAddToCart() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKMusicalPencilsEndToEndSteps.cs:line 94
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at UnitTestProject1.PurchasingMusicalNotesPencilsFeature.ScenarioCleanup() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKMusicalPencilsEndToEnd.feature.cs:line 0
+   at UnitTestProject1.PurchasingMusicalNotesPencilsFeature.EndToEndMusicalPencilsTestFlow() in C:\Users\Kevin Berg\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\MKMusicalPencilsEndToEnd.feature:line 29
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 40
+   at TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Interfaces\TaskExecutors\StaticOrInstanceMethodExecutor.cs:line 21
+   at TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType) in c:\TeamCity\buildAgent\work\1ace6ed01d0a43bb\TechTalk.SpecRun.Framework.Executor\TestAssemblyExecutor.cs:line 215</pre>
+                        </td>
+                        <td>Failed in 18.188s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I then click View Cart / Checkout</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I enter the promotional code and apply</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I choose premium shipping from the selector</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I then click the bottom checkout button</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click the Checkout as Guest button</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I complete the form accordingly</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I uncheck the Special Offers and Emails box</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check the button to ship to a different address</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I enter the additional address</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click the radio button to designate the item is a gift</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click the button to Proceed to Payment and Review</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I fill out the payment information</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I click the button to submit the order</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I close all of the popup windows</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I will be on the Order Confirmation Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - End to End Musical Pencils Test Flow]-->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.03s</td>
+                    </tr>
+            </table>
+            <a name="t1312048565.0" />
+            <h3>Scenario: After Entering a Valid Email and Password I should see the Account Page (in UnitTestProject1, My Account Login Error Testing)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 1/25/2016 9:52:25 AM</li>
+                <li>Execution time (sec): 32.4495931</li>
+                <li>Thread: #18</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Given I am on the MK Account Login Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - After Entering a Valid Email and Password I should see the Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenIAmOnTheMKAccountLoginPage() (6.9s)</pre>
+                        </td>
+                        <td>Succeeded in 17.573s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">And I check for the Free Shipping popup on the account login page</pre>
+                        </td>
+                        <td>
+                            <!--[TestArrange: Scenario - After Entering a Valid Email and Password I should see the Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.GivenICheckForPopUpHomePage() (0.7s)</pre>
+                        </td>
+                        <td>Succeeded in 0.72s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">When I enter the email address &#39;SSBtestautomation@gmail.com&#39; and the password &#39;SSBtest100&#39;</pre>
+                        </td>
+                        <td>
+                            <!--[TestAct: Scenario - After Entering a Valid Email and Password I should see the Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.WhenIEnterTheEmailAddressAndThePassword(&quot;SSBtestautomation...&quot;, &quot;SSBtest100&quot;) (4.9s)</pre>
+                        </td>
+                        <td>Succeeded in 4.952s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Then I should be on the My Account Page</pre>
+                        </td>
+                        <td>
+                            <!--[TestAssert: Scenario - After Entering a Valid Email and Password I should see the Account Page]-->
+                            <pre class="log">done: MKAccountLoginErrorTestingSteps.ThenIShouldBeOnTheMyAccountPage() (0.6s)</pre>
+                        </td>
+                        <td>Succeeded in 0.64s</td>
+                    </tr>
+            </table>
+	</body>
+</html>

@@ -10,7 +10,7 @@ Scenario: Navigate to the My Account Page
 Scenario: Entering an Invalid Email should Display an Error
 	Given I am on the MK Account Login Page
 	And I check for the Free Shipping popup on the account login page
-	When I enter the email address 'SSBtestautomation@gmail' and the password 'SSBtest10'
+	When I enter the email address 'SSBtestautomation@gmail' and the password 'SSBtest100'
 	Then I should see the Invalid Username and Password Error
 
 Scenario: Entering an Invalid Password should Display an Error
